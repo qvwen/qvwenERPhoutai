@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.erp.liaoshuanchen.dao.DsdscustclassMapper" >
+  <resultMap id="BaseResultMap" type="com.example.erp.liaoshuanchen.pojo.Dsdscustclass" >
+    <id column="classid" property="classid" jdbcType="VARCHAR" />
+    <result column="classname" property="classname" jdbcType="VARCHAR" />
+    <result column="engname" property="engname" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dsdscustclass
+    where classid = #{classid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.erp.liaoshuanchen.pojo.Dsdscustclass" useGeneratedKeys="true" keyProperty="classid" >
+    insert into dsdscustclass (classname, engname, memo
+      )
+    values (#{classname,jdbcType=VARCHAR}, #{engname,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.erp.liaoshuanchen.pojo.Dsdscustclass" >
+    update dsdscustclass
+    set classname = #{classname,jdbcType=VARCHAR},
+      engname = #{engname,jdbcType=VARCHAR},
+      memo = #{memo,jdbcType=VARCHAR}
+    where classid = #{classid,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select classid, classname, engname, memo
+    from dsdscustclass
+    where classid = #{classid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select classid, classname, engname, memo
+    from dsdscustclass
+  </select>
+</mapper>

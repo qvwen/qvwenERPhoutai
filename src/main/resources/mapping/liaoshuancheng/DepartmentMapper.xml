@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.erp.liaoshuanchen.dao.DepartmentMapper" >
+  <resultMap id="BaseResultMap" type="com.example.erp.liaoshuanchen.pojo.Department" >
+    <id column="Department_id" property="departmentId" jdbcType="INTEGER" />
+    <result column="Department_name" property="departmentName" jdbcType="VARCHAR" />
+    <result column="Department_English" property="departmentEnglish" jdbcType="VARCHAR" />
+    <result column="Department_program" property="departmentProgram" jdbcType="VARCHAR" />
+    <result column="Department_Calendar" property="departmentCalendar" jdbcType="VARCHAR" />
+    <result column="Department_remarks" property="departmentRemarks" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from department
+    where Department_id = #{departmentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.erp.liaoshuanchen.pojo.Department" useGeneratedKeys="true" keyProperty="departmentId" >
+    insert into department (Department_name, Department_English, 
+      Department_program, Department_Calendar, 
+      Department_remarks)
+    values (#{departmentName,jdbcType=VARCHAR}, #{departmentEnglish,jdbcType=VARCHAR}, 
+      #{departmentProgram,jdbcType=VARCHAR}, #{departmentCalendar,jdbcType=VARCHAR}, 
+      #{departmentRemarks,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.erp.liaoshuanchen.pojo.Department" >
+    update department
+    set Department_name = #{departmentName,jdbcType=VARCHAR},
+      Department_English = #{departmentEnglish,jdbcType=VARCHAR},
+      Department_program = #{departmentProgram,jdbcType=VARCHAR},
+      Department_Calendar = #{departmentCalendar,jdbcType=VARCHAR},
+      Department_remarks = #{departmentRemarks,jdbcType=VARCHAR}
+    where Department_id = #{departmentId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select Department_id, Department_name, Department_English, Department_program, Department_Calendar, 
+    Department_remarks
+    from department
+    where Department_id = #{departmentId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select Department_id, Department_name, Department_English, Department_program, Department_Calendar, 
+    Department_remarks
+    from department
+  </select>
+</mapper>

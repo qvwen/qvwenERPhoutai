@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.erp.liaoshuanchen.dao.PurchaseinvoicecontentLscMapper" >
+  <resultMap id="BaseResultMap" type="com.example.erp.liaoshuanchen.pojo.PurchaseinvoicecontentLsc" >
+    <id column="purNo" property="purno" jdbcType="VARCHAR" />
+    <id column="apdrows" property="apdrows" jdbcType="VARCHAR" />
+    <result column="materialID" property="materialid" jdbcType="VARCHAR" />
+    <result column="materialName" property="materialname" jdbcType="VARCHAR" />
+    <result column="specificationType" property="specificationtype" jdbcType="VARCHAR" />
+    <result column="unitName" property="unitname" jdbcType="VARCHAR" />
+    <result column="quantity" property="quantity" jdbcType="INTEGER" />
+    <result column="price" property="price" jdbcType="REAL" />
+    <result column="money" property="money" jdbcType="REAL" />
+    <result column="taxRate" property="taxrate" jdbcType="REAL" />
+    <result column="tax" property="tax" jdbcType="REAL" />
+    <result column="taxAmount" property="taxamount" jdbcType="REAL" />
+    <result column="unquantity" property="unquantity" jdbcType="INTEGER" />
+    <result column="procurementID" property="procurementid" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="remark1" property="remark1" jdbcType="VARCHAR" />
+    <result column="remark2" property="remark2" jdbcType="VARCHAR" />
+    <result column="remark3" property="remark3" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map" >
+    delete from purchaseinvoicecontent_lsc
+    where purNo = #{purno,jdbcType=VARCHAR}
+      and apdrows = #{apdrows,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.erp.liaoshuanchen.pojo.PurchaseinvoicecontentLsc" useGeneratedKeys="true" keyProperty="purno" >
+    insert into purchaseinvoicecontent_lsc (apdrows, materialID, materialName, 
+      specificationType, unitName, quantity, 
+      price, money, taxRate, tax, 
+      taxAmount, unquantity, procurementID, 
+      remark, remark1, remark2, 
+      remark3)
+    values (#{apdrows,jdbcType=VARCHAR}, #{materialid,jdbcType=VARCHAR}, #{materialname,jdbcType=VARCHAR}, 
+      #{specificationtype,jdbcType=VARCHAR}, #{unitname,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, 
+      #{price,jdbcType=REAL}, #{money,jdbcType=REAL}, #{taxrate,jdbcType=REAL}, #{tax,jdbcType=REAL}, 
+      #{taxamount,jdbcType=REAL}, #{unquantity,jdbcType=INTEGER}, #{procurementid,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}, 
+      #{remark3,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.erp.liaoshuanchen.pojo.PurchaseinvoicecontentLsc" >
+    update purchaseinvoicecontent_lsc
+    set materialID = #{materialid,jdbcType=VARCHAR},
+      materialName = #{materialname,jdbcType=VARCHAR},
+      specificationType = #{specificationtype,jdbcType=VARCHAR},
+      unitName = #{unitname,jdbcType=VARCHAR},
+      quantity = #{quantity,jdbcType=INTEGER},
+      price = #{price,jdbcType=REAL},
+      money = #{money,jdbcType=REAL},
+      taxRate = #{taxrate,jdbcType=REAL},
+      tax = #{tax,jdbcType=REAL},
+      taxAmount = #{taxamount,jdbcType=REAL},
+      unquantity = #{unquantity,jdbcType=INTEGER},
+      procurementID = #{procurementid,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      remark1 = #{remark1,jdbcType=VARCHAR},
+      remark2 = #{remark2,jdbcType=VARCHAR},
+      remark3 = #{remark3,jdbcType=VARCHAR}
+    where purNo = #{purno,jdbcType=VARCHAR}
+      and apdrows = #{apdrows,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map" >
+    select purNo, apdrows, materialID, materialName, specificationType, unitName, quantity, 
+    price, money, taxRate, tax, taxAmount, unquantity, procurementID, remark, remark1, 
+    remark2, remark3
+    from purchaseinvoicecontent_lsc
+    where purNo = #{purno,jdbcType=VARCHAR}
+      and apdrows = #{apdrows,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select purNo, apdrows, materialID, materialName, specificationType, unitName, quantity, 
+    price, money, taxRate, tax, taxAmount, unquantity, procurementID, remark, remark1, 
+    remark2, remark3
+    from purchaseinvoicecontent_lsc
+  </select>
+</mapper>
