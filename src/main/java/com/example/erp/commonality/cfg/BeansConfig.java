@@ -23,7 +23,7 @@ public class BeansConfig {
 //		properties.setProperty("offsetAsPageNum", "true");
 //		properties.setProperty("rowBoundsWithCount", "true");
 //		properties.setProperty("reasonable", "true");
-//		properties.setProperty("dialect", "mysql");
+//		properties.setProperty("dialect", "mysql"); 
 //		pageHelper.setProperties(properties);
 //		return pageHelper;
 //	}
