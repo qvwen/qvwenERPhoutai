@@ -13,7 +13,7 @@ import com.github.pagehelper.PageHelper;
  
 
 @Configuration
-@MapperScan(basePackages = { "com.example.demo.dao" })
+@MapperScan(basePackages = { "com.example.erp.*.dao" })
 public class BeansConfig {
 	
 	@Bean

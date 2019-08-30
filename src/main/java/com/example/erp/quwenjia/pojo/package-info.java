@@ -5,4 +5,4 @@
  * @author qwj
  *
  */
-package com.example.erp.quwenjia;
+package com.example.erp.quwenjia.pojo;
