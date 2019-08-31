@@ -1,8 +1,7 @@
 package com.example.erp.quwenjia.pojo;
+ 
 
-import java.io.Serializable;
-
-public class permissionAndRoleRelation implements Serializable {
+public class permissionAndRoleRelation  {
     private Integer prid;
 
     private Integer permissionid;

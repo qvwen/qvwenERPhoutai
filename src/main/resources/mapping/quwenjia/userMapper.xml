@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.erp.quwenjia.dao.UserDao">
-    <resultMap type="" id="userMap">
-       <id property=""  column="users_id"/>
-    </resultMap>
+	<resultMap type="user" id="userMap">
+		<id property="usersId" column="users_id" />
+		<result column="user_name" jdbcType="VARCHAR" property="userName" />
+		<result column="user_acction" jdbcType="VARCHAR" property="userAcction" />
+		<result column="user_pwd" jdbcType="VARCHAR" property="userPwd" />
+		<result column="user_imge" jdbcType="LONGVARCHAR" property="userImge" />
+		<collection property="roleS" column="usersId" resultMap="roleMap" />
+	</resultMap>
+	<resultMap type="role" id="roleMap">
+		<id column="role_id" jdbcType="INTEGER" property="roleId" />
+		<result column="role_name" jdbcType="VARCHAR" property="roleName" />
+		<result column="role_state" jdbcType="INTEGER" property="roleState" />
+		<result column="role_date" jdbcType="DATE" property="roleDate" />
+		<result column="role_code" jdbcType="VARCHAR" property="roleCode" />
+		<result column="role_user" jdbcType="INTEGER" property="roleUser" />
+		<collection property="permissions" column="role_id"
+			resultMap="permissionMap" />
+	</resultMap>
+
+	<resultMap type="permission" id="permissionMap">
+		<id column="permission_id" jdbcType="INTEGER" property="permissionId" />
+		<result column="permission_name" jdbcType="VARCHAR" property="permissionName" />
+		<result column="f_id" jdbcType="INTEGER" property="fId" />
+		<result column="permission_icon" jdbcType="VARCHAR" property="permissionIcon" />
+		<result column="permission_path" jdbcType="VARCHAR" property="permissionPath" />
+		<result column="permission_bool" jdbcType="INTEGER" property="permissionBool" />
+		<result column="permission_code" jdbcType="VARCHAR" property="permissionCode" />
+		<association property="permissions" column="f_id" select="permission"></association>
+	</resultMap>
+	<select id="permission" resultMap="permissionMap">
+		select * from permission where
+		permission_id = #{0}
+	</select>
 	<select id="getuser" resultMap="userMap">
 		SELECT
 		`user`.users_id,
@@ -34,14 +64,18 @@
 		permission.permission_code
 		FROM
 		`user`
-		LEFT JOIN roleanduser ON `user`.users_id = roleanduser.users_id
-		LEFT JOIN role ON role.role_id = roleanduser.roles_id
-		LEFT JOIN permissionandrolerelation ON role.role_id =
+		LEFT
+		JOIN roleanduser ON `user`.users_id = roleanduser.users_id
+		LEFT JOIN
+		role ON role.role_id = roleanduser.roles_id
+		LEFT JOIN
+		permissionandrolerelation ON role.role_id =
 		permissionandrolerelation.Roleid
-		LEFT JOIN permission ON permissionandrolerelation.Permissionid =
+		LEFT JOIN permission ON
+		permissionandrolerelation.Permissionid =
 		permission.permission_id
 		WHERE
-		`user`.user_acction = '3209799669' AND
-		`user`.user_pwd = 'quwenjia20011021'
+		`user`.user_acction = #{ac} AND
+		`user`.user_pwd =#{pws}
 	</select>
 </mapper>

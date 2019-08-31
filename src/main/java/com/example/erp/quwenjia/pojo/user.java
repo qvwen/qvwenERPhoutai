@@ -13,7 +13,13 @@ public class user implements Serializable {
     private String userPwd;
 
     private String userImge;
-
+    
+    private Integer Department_id;  //部门编号
+    
+    private  Integer Personnel_id; //人员编号
+ 
+    private String Personnel_name;  //人员名称
+    
     private  List<role>  roleS;   //角色集合
     
 
