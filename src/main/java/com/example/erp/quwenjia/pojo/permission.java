@@ -18,9 +18,17 @@ public class permission implements Serializable {
 
     private String permissionCode;
 
-    private List<permission> permissions;   //权限集合
+    private  permission permissions;   //权限父权限对象
+     
+    public permission getPermissions() {
+		return permissions;
+	}
 
-    public Integer getPermissionId() {
+	public void setPermissions(permission permissions) {
+		this.permissions = permissions;
+	}
+
+	public Integer getPermissionId() {
         return permissionId;
     }
 

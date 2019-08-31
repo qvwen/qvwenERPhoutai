@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.erp.quwenjia.dao.UserDao">
-     
+    <resultMap type="" id="userMap">
+       <id property=""  column="users_id"/>
+    </resultMap>
+	<select id="getuser" resultMap="userMap">
+		SELECT
+		`user`.users_id,
+		`user`.user_name,
+		`user`.user_imge,
+		`user`.user_acction,
+		`user`.user_pwd,
+		roleanduser.id,
+		roleanduser.users_id,
+		roleanduser.roles_id,
+		roleanduser.and_User,
+		roleanduser.and_date,
+		role.role_id,
+		role.role_name,
+		role.role_state,
+		role.role_date,
+		role.role_code,
+		role.role_user,
+		permissionandrolerelation.prid,
+		permissionandrolerelation.Permissionid,
+		permissionandrolerelation.Roleid,
+		permission.permission_id,
+		permission.permission_name,
+		permission.f_id,
+		permission.permission_icon,
+		permission.permission_path,
+		permission.permission_bool,
+		permission.permission_code
+		FROM
+		`user`
+		LEFT JOIN roleanduser ON `user`.users_id = roleanduser.users_id
+		LEFT JOIN role ON role.role_id = roleanduser.roles_id
+		LEFT JOIN permissionandrolerelation ON role.role_id =
+		permissionandrolerelation.Roleid
+		LEFT JOIN permission ON permissionandrolerelation.Permissionid =
+		permission.permission_id
+		WHERE
+		`user`.user_acction = '3209799669' AND
+		`user`.user_pwd = 'quwenjia20011021'
+	</select>
 </mapper>
