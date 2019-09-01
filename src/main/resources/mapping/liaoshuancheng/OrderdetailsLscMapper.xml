@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.erp.liaoshuanchen.dao.OrderdetailsLscMapper" >
+  <resultMap id="BaseResultMap" type="com.example.erp.liaoshuanchen.pojo.OrderdetailsLsc" >
+    <id column="billId" property="billid" jdbcType="VARCHAR" />
+    <id column="coteMark" property="cotemark" jdbcType="VARCHAR" />
+    <result column="matid" property="matid" jdbcType="VARCHAR" />
+    <result column="matname" property="matname" jdbcType="VARCHAR" />
+    <result column="matspec" property="matspec" jdbcType="VARCHAR" />
+    <result column="matunit" property="matunit" jdbcType="VARCHAR" />
+    <result column="number" property="number" jdbcType="INTEGER" />
+    <result column="agioAgoPrice" property="agioagoprice" jdbcType="REAL" />
+    <result column="agio" property="agio" jdbcType="REAL" />
+    <result column="price" property="price" jdbcType="REAL" />
+    <result column="money" property="money" jdbcType="REAL" />
+    <result column="cess" property="cess" jdbcType="REAL" />
+    <result column="taxmoney" property="taxmoney" jdbcType="REAL" />
+    <result column="intaxmoney" property="intaxmoney" jdbcType="REAL" />
+    <result column="present" property="present" jdbcType="INTEGER" />
+    <result column="outStoreroom" property="outstoreroom" jdbcType="DATE" />
+    <result column="notOutNumbe" property="notoutnumbe" jdbcType="INTEGER" />
+    <result column="sinName" property="sinname" jdbcType="VARCHAR" />
+    <result column="originBillId" property="originbillid" jdbcType="VARCHAR" />
+    <result column="production2" property="production2" jdbcType="INTEGER" />
+    <result column="alreadyProductionNumber" property="alreadyproductionnumber" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="remark1" property="remark1" jdbcType="VARCHAR" />
+    <result column="remark2" property="remark2" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map" >
+    delete from orderdetails_lsc
+    where billId = #{billid,jdbcType=VARCHAR}
+      and coteMark = #{cotemark,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.erp.liaoshuanchen.pojo.OrderdetailsLsc" useGeneratedKeys="true" keyProperty="billid" >
+    insert into orderdetails_lsc (coteMark, matid, matname, 
+      matspec, matunit, number, 
+      agioAgoPrice, agio, price, money, 
+      cess, taxmoney, intaxmoney, 
+      present, outStoreroom, notOutNumbe, 
+      sinName, originBillId, production2, 
+      alreadyProductionNumber, remark, remark1, 
+      remark2)
+    values (#{cotemark,jdbcType=VARCHAR}, #{matid,jdbcType=VARCHAR}, #{matname,jdbcType=VARCHAR}, 
+      #{matspec,jdbcType=VARCHAR}, #{matunit,jdbcType=VARCHAR}, #{number,jdbcType=INTEGER}, 
+      #{agioagoprice,jdbcType=REAL}, #{agio,jdbcType=REAL}, #{price,jdbcType=REAL}, #{money,jdbcType=REAL}, 
+      #{cess,jdbcType=REAL}, #{taxmoney,jdbcType=REAL}, #{intaxmoney,jdbcType=REAL}, 
+      #{present,jdbcType=INTEGER}, #{outstoreroom,jdbcType=DATE}, #{notoutnumbe,jdbcType=INTEGER}, 
+      #{sinname,jdbcType=VARCHAR}, #{originbillid,jdbcType=VARCHAR}, #{production2,jdbcType=INTEGER}, 
+      #{alreadyproductionnumber,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, #{remark1,jdbcType=VARCHAR}, 
+      #{remark2,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.erp.liaoshuanchen.pojo.OrderdetailsLsc" >
+    update orderdetails_lsc
+    set matid = #{matid,jdbcType=VARCHAR},
+      matname = #{matname,jdbcType=VARCHAR},
+      matspec = #{matspec,jdbcType=VARCHAR},
+      matunit = #{matunit,jdbcType=VARCHAR},
+      number = #{number,jdbcType=INTEGER},
+      agioAgoPrice = #{agioagoprice,jdbcType=REAL},
+      agio = #{agio,jdbcType=REAL},
+      price = #{price,jdbcType=REAL},
+      money = #{money,jdbcType=REAL},
+      cess = #{cess,jdbcType=REAL},
+      taxmoney = #{taxmoney,jdbcType=REAL},
+      intaxmoney = #{intaxmoney,jdbcType=REAL},
+      present = #{present,jdbcType=INTEGER},
+      outStoreroom = #{outstoreroom,jdbcType=DATE},
+      notOutNumbe = #{notoutnumbe,jdbcType=INTEGER},
+      sinName = #{sinname,jdbcType=VARCHAR},
+      originBillId = #{originbillid,jdbcType=VARCHAR},
+      production2 = #{production2,jdbcType=INTEGER},
+      alreadyProductionNumber = #{alreadyproductionnumber,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      remark1 = #{remark1,jdbcType=VARCHAR},
+      remark2 = #{remark2,jdbcType=VARCHAR}
+    where billId = #{billid,jdbcType=VARCHAR}
+      and coteMark = #{cotemark,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map" >
+    select billId, coteMark, matid, matname, matspec, matunit, number, agioAgoPrice, 
+    agio, price, money, cess, taxmoney, intaxmoney, present, outStoreroom, notOutNumbe, 
+    sinName, originBillId, production2, alreadyProductionNumber, remark, remark1, remark2
+    from orderdetails_lsc
+    where billId = #{billid,jdbcType=VARCHAR}
+      and coteMark = #{cotemark,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select billId, coteMark, matid, matname, matspec, matunit, number, agioAgoPrice, 
+    agio, price, money, cess, taxmoney, intaxmoney, present, outStoreroom, notOutNumbe, 
+    sinName, originBillId, production2, alreadyProductionNumber, remark, remark1, remark2
+    from orderdetails_lsc
+  </select>
+</mapper>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.erp.liaoshuanchen.dao.OtheroutdetailLscMapper" >
+  <resultMap id="BaseResultMap" type="com.example.erp.liaoshuanchen.pojo.OtheroutdetailLsc" >
+    <id column="otheroutid" property="otheroutid" jdbcType="VARCHAR" />
+    <id column="Othoutlineno" property="othoutlineno" jdbcType="INTEGER" />
+    <result column="Othoutmertialsid" property="othoutmertialsid" jdbcType="VARCHAR" />
+    <result column="Othoutmertialname" property="othoutmertialname" jdbcType="VARCHAR" />
+    <result column="Othouttypes" property="othouttypes" jdbcType="VARCHAR" />
+    <result column="Othoutunits" property="othoutunits" jdbcType="VARCHAR" />
+    <result column="Othoutamount" property="othoutamount" jdbcType="INTEGER" />
+    <result column="price" property="price" jdbcType="REAL" />
+    <result column="money" property="money" jdbcType="REAL" />
+    <result column="batchNumber" property="batchnumber" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="remark1" property="remark1" jdbcType="VARCHAR" />
+    <result column="remark2" property="remark2" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map" >
+    delete from otheroutdetail_lsc
+    where otheroutid = #{otheroutid,jdbcType=VARCHAR}
+      and Othoutlineno = #{othoutlineno,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.erp.liaoshuanchen.pojo.OtheroutdetailLsc" useGeneratedKeys="true" keyProperty="otheroutid" >
+    insert into otheroutdetail_lsc (Othoutlineno, Othoutmertialsid, Othoutmertialname, 
+      Othouttypes, Othoutunits, Othoutamount, 
+      price, money, batchNumber, 
+      remark, remark1, remark2
+      )
+    values (#{othoutlineno,jdbcType=INTEGER}, #{othoutmertialsid,jdbcType=VARCHAR}, #{othoutmertialname,jdbcType=VARCHAR}, 
+      #{othouttypes,jdbcType=VARCHAR}, #{othoutunits,jdbcType=VARCHAR}, #{othoutamount,jdbcType=INTEGER}, 
+      #{price,jdbcType=REAL}, #{money,jdbcType=REAL}, #{batchnumber,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.erp.liaoshuanchen.pojo.OtheroutdetailLsc" >
+    update otheroutdetail_lsc
+    set Othoutmertialsid = #{othoutmertialsid,jdbcType=VARCHAR},
+      Othoutmertialname = #{othoutmertialname,jdbcType=VARCHAR},
+      Othouttypes = #{othouttypes,jdbcType=VARCHAR},
+      Othoutunits = #{othoutunits,jdbcType=VARCHAR},
+      Othoutamount = #{othoutamount,jdbcType=INTEGER},
+      price = #{price,jdbcType=REAL},
+      money = #{money,jdbcType=REAL},
+      batchNumber = #{batchnumber,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      remark1 = #{remark1,jdbcType=VARCHAR},
+      remark2 = #{remark2,jdbcType=VARCHAR}
+    where otheroutid = #{otheroutid,jdbcType=VARCHAR}
+      and Othoutlineno = #{othoutlineno,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map" >
+    select otheroutid, Othoutlineno, Othoutmertialsid, Othoutmertialname, Othouttypes, 
+    Othoutunits, Othoutamount, price, money, batchNumber, remark, remark1, remark2
+    from otheroutdetail_lsc
+    where otheroutid = #{otheroutid,jdbcType=VARCHAR}
+      and Othoutlineno = #{othoutlineno,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select otheroutid, Othoutlineno, Othoutmertialsid, Othoutmertialname, Othouttypes, 
+    Othoutunits, Othoutamount, price, money, batchNumber, remark, remark1, remark2
+    from otheroutdetail_lsc
+  </select>
+</mapper>
