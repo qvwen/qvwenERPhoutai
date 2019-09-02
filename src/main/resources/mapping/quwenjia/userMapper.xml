@@ -2,80 +2,88 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.erp.quwenjia.dao.UserDao">
 	<resultMap type="user" id="userMap">
-		<id property="usersId" column="users_id" />
-		<result column="user_name" jdbcType="VARCHAR" property="userName" />
-		<result column="user_acction" jdbcType="VARCHAR" property="userAcction" />
-		<result column="user_pwd" jdbcType="VARCHAR" property="userPwd" />
-		<result column="user_imge" jdbcType="LONGVARCHAR" property="userImge" />
-		<collection property="roleS" column="usersId" resultMap="roleMap" />
+		<id column="uid" jdbcType="INTEGER" property="uid" />
+		<result column="account" jdbcType="VARCHAR" property="account" />
+		<result column="Userpwd" jdbcType="VARCHAR" property="userpwd" />
+		<result column="Deptid" jdbcType="VARCHAR" property="deptid" />
+		<result column="deptname" jdbcType="VARCHAR" property="deptname" />
+		<result column="uimg" jdbcType="VARCHAR" property="uimg" />
+		<result column="status" jdbcType="INTEGER" property="status" />
+		<result column="empid" jdbcType="VARCHAR" property="empid" />
+		<result column="empname" jdbcType="VARCHAR" property="empname" />
+		<collection property="roles" column="uid" resultMap="roleMap" />
 	</resultMap>
 	<resultMap type="role" id="roleMap">
-		<id column="role_id" jdbcType="INTEGER" property="roleId" />
-		<result column="role_name" jdbcType="VARCHAR" property="roleName" />
-		<result column="role_state" jdbcType="INTEGER" property="roleState" />
-		<result column="role_date" jdbcType="DATE" property="roleDate" />
-		<result column="role_code" jdbcType="VARCHAR" property="roleCode" />
-		<result column="role_user" jdbcType="INTEGER" property="roleUser" />
-		<collection property="permissions" column="role_id"
-			resultMap="permissionMap" />
+		<id column="rid" jdbcType="INTEGER" property="rid" />
+		<result column="rcode" jdbcType="VARCHAR" property="rcode" />
+		<result column="rname" jdbcType="VARCHAR" property="rname" />
+		<result column="rstatus" jdbcType="INTEGER" property="rstatus" />
+		<result column="createdate" jdbcType="DATE" property="createdate" />
+		<result column="createby" jdbcType="VARCHAR" property="createby" />
+		<collection property="functions" column="rid" resultMap="functionMap" />
 	</resultMap>
 
-	<resultMap type="permission" id="permissionMap">
-		<id column="permission_id" jdbcType="INTEGER" property="permissionId" />
-		<result column="permission_name" jdbcType="VARCHAR" property="permissionName" />
-		<result column="f_id" jdbcType="INTEGER" property="fId" />
-		<result column="permission_icon" jdbcType="VARCHAR" property="permissionIcon" />
-		<result column="permission_path" jdbcType="VARCHAR" property="permissionPath" />
-		<result column="permission_bool" jdbcType="INTEGER" property="permissionBool" />
-		<result column="permission_code" jdbcType="VARCHAR" property="permissionCode" />
-		<association property="permissions" column="f_id" select="permission"></association>
+	<resultMap type="function" id="functionMap">
+		<id column="fid" jdbcType="INTEGER" property="fid" />
+		<result column="fcode" jdbcType="VARCHAR" property="fcode" />
+		<result column="fname" jdbcType="VARCHAR" property="fname" />
+		<result column="furl" jdbcType="VARCHAR" property="furl" />
+		<result column="ficon" jdbcType="VARCHAR" property="ficon" />
+		<result column="fpid" jdbcType="INTEGER" property="fpid" />
+		<result column="createdate" jdbcType="DATE" property="createdate" />
+		<result column="isTrue" jdbcType="INTEGER" property="istrue" />
+		<association property="functionf" column="fpid" select="functionId"></association>
 	</resultMap>
-	<select id="permission" resultMap="permissionMap">
-		select * from permission where
-		permission_id = #{0}
+	
+	<select id="functionId" resultMap="functionMap">
+		 SELECT * FROM `function`  WHERE `fid` = #{0}
 	</select>
 	<select id="getuser" resultMap="userMap">
 		SELECT
-		`user`.users_id,
-		`user`.user_name,
-		`user`.user_imge,
-		`user`.user_acction,
-		`user`.user_pwd,
-		roleanduser.id,
-		roleanduser.users_id,
-		roleanduser.roles_id,
-		roleanduser.and_User,
-		roleanduser.and_date,
-		role.role_id,
-		role.role_name,
-		role.role_state,
-		role.role_date,
-		role.role_code,
-		role.role_user,
-		permissionandrolerelation.prid,
-		permissionandrolerelation.Permissionid,
-		permissionandrolerelation.Roleid,
-		permission.permission_id,
-		permission.permission_name,
-		permission.f_id,
-		permission.permission_icon,
-		permission.permission_path,
-		permission.permission_bool,
-		permission.permission_code
+		`user`.uid,
+		`user`.account,
+		`user`.Userpwd,
+		`user`.Deptid,
+		`user`.deptname,
+		`user`.uimg,
+		`user`.`status`,
+		`user`.empid,
+		`user`.empname,
+		userandrole.Urid,
+		userandrole.uId,
+		userandrole.rid,
+		userandrole.Createby,
+		userandrole.Createdate,
+		role.rid,
+		role.rcode,
+		role.rname,
+		role.rstatus,
+		role.createdate,
+		role.createby,
+		permission.pid,
+		permission.rid,
+		permission.fid,
+		permission.createdate,
+		permission.createby,
+		`function`.fid,
+		`function`.fcode,
+		`function`.fname,
+		`function`.furl,
+		`function`.ficon,
+		`function`.fpid,
+		`function`.createdate,
+		`function`.isTrue
 		FROM
 		`user`
+		LEFT JOIN userandrole ON `user`.uid =
+		userandrole.Urid
+		LEFT JOIN role ON userandrole.rid = role.rid
 		LEFT
-		JOIN roleanduser ON `user`.users_id = roleanduser.users_id
-		LEFT JOIN
-		role ON role.role_id = roleanduser.roles_id
-		LEFT JOIN
-		permissionandrolerelation ON role.role_id =
-		permissionandrolerelation.Roleid
-		LEFT JOIN permission ON
-		permissionandrolerelation.Permissionid =
-		permission.permission_id
+		JOIN permission ON role.rid = permission.rid
+		LEFT JOIN `function` ON
+		permission.fid = `function`.fid
 		WHERE
-		`user`.user_acction = #{ac} AND
-		`user`.user_pwd =#{pws}
+		`user`.account = #{ac} AND
+		`user`.Userpwd =#{pws}
 	</select>
 </mapper>
