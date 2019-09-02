@@ -18,14 +18,9 @@ import com.github.pagehelper.PageHelper;
  
 
 @Configuration
-<<<<<<< HEAD
 @MapperScan(basePackages = { "com.example.erp.*.dao"})
-=======
-@MapperScan(basePackages = { "com.example.erp.*.dao" })
->>>>>>> refs/heads/master
 public class BeansConfig {
 	
-<<<<<<< HEAD
 	@Bean
     public ConversionService conversionService() {
         FormattingConversionServiceFactoryBean factory = new FormattingConversionServiceFactoryBean();
@@ -35,8 +30,6 @@ public class BeansConfig {
         factory.afterPropertiesSet();
         return factory.getObject();
     }
-=======
->>>>>>> refs/heads/master
 
 
 }
