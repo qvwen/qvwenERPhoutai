@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!DOCTYPE mapper
@@ -291,4 +292,299 @@
 	</insert>
 
 
+=======
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.erp.wenwei.dao.IAllotDao">
+	<!-- 查询所有调拨 -->
+	<select id="findAllMove"
+		resultType="com.example.erp.wenwei.vo.AllotVO">
+		SELECT
+		allott.WareOutID,
+		allott.WareInID,
+		allott.Permitter,
+		allott.MoveDate,
+		allott.MoveNO,
+		allott.MakerID,
+		allott.MoveDetailNO,
+		movedetail.MoveNO,
+		movedetail.ProdID,
+		movedetail.Reason,
+		movedetail.MoveDetailNO,
+		movedetail.MoveBillNO,
+		dsproductprodid.ProdID,
+		dsproductprodid.classid,
+		dsproductprodid.classname,
+		dsproductprodid.barcodeid,
+		dsproductprodid.prodname,
+		dsproductprodid.prodsizi,
+		dsproductprodid.engname,
+		dsproductprodid.currid,
+		dsproductprodid.currname,
+		dsproductprodid.suggestprice,
+		dsproductprodid.salespriceA,
+		dsproductprodid.salespriceB,
+		dsproductprodid.salespriceC,
+		dsproductprodid.salespriceD,
+		dsproductprodid.salespriceE,
+		dsproductprodid.stdprice,
+		dsproductprodid.busitaxrate,
+		dsproductprodid.batchused,
+		dsproductprodid.effectdateused,
+		dsproductprodid.validdateused,
+		dsproductprodid.defvalidday,
+		dsproductprodid.proddesc,
+		dsproductprodid.prodform,
+		dsproductprodid.advancedays,
+		dsproductprodid.majorsupplier,
+		dsproductprodid.majorsuppliername,
+		dsproductprodid.boutstockday,
+		dsproductprodid.binstockday,
+		dsproductprodid.sluggishdays,
+		dsproductprodid.invaliddate,
+		dsproductprodid.safeqty,
+		dsproductprodid.cy20,
+		dsproductprodid.cy40,
+		dsproductprodid.hq40,
+		dsproductprodid.cy45,
+		dsproductprodid.inpackamt,
+		dsproductprodid.outpackamt,
+		dsproductprodid.volumeunit,
+		dsproductprodid.volume,
+		dsproductprodid.netweight,
+		dsproductprodid.grossweigh,
+		dsproductprodid.bstdcost,
+		dsproductprodid.bavgcost,
+		dsproductprodid.cavgcost,
+		dsproductprodid.ctotalcost,
+		dsproductprodid.udef1,
+		dsproductprodid.udef2,
+		dsproductprodid.priceoftax,
+		dsproductprodid.btotalcost,
+		dsproductprodid.stdunitid,
+		dsproductprodid.stdunitname,
+		dsproductprodid.stdunitengname,
+		dsproductprodid.callamt,
+		dsproductprodid.nweight,
+		dsproductprodid.gweight,
+		dsproductprodid.`long`,
+		dsproductprodid.lunit,
+		dsproductprodid.width,
+		dsproductprodid.higth,
+		dsproductprodid.mvolume,
+		dsproductprodid.probigtype,
+		dsproductprodid.backtaxrate,
+		dsproductprodid.taxitemsid,
+		dsproductprodid.ballamt,
+		dsproductprodid.bcurrstock,
+		dsproductprodid.bsafeallstk,
+		dsproductprodid.csafeallstk,
+		dsproductprodid.ccurrstock,
+		dsproductprodid.cstdcost,
+		dsproductprodid.WareID
+		FROM
+		allott
+		INNER JOIN
+		movedetail ON movedetail.MoveNO = allott.MoveNO
+		INNER JOIN
+		dsproductprodid ON movedetail.ProdID = dsproductprodid.ProdID
+	</select>
+
+	<!--根据仓库查询物料 -->
+	<select id="findProdByWare" resultType="dsproductprodidentity">
+		SELECT
+		dsproductprodid.ProdID,
+		dsproductprodid.classid,
+		dsproductprodid.classname,
+		dsproductprodid.barcodeid,
+		dsproductprodid.prodname,
+		dsproductprodid.prodsizi,
+		dsproductprodid.engname,
+		dsproductprodid.currid,
+		dsproductprodid.currname,
+		dsproductprodid.suggestprice,
+		dsproductprodid.salespriceA,
+		dsproductprodid.salespriceB,
+		dsproductprodid.salespriceC,
+		dsproductprodid.salespriceD,
+		dsproductprodid.salespriceE,
+		dsproductprodid.stdprice,
+		dsproductprodid.busitaxrate,
+		dsproductprodid.batchused,
+		dsproductprodid.effectdateused,
+		dsproductprodid.validdateused,
+		dsproductprodid.defvalidday,
+		dsproductprodid.proddesc,
+		dsproductprodid.prodform,
+		dsproductprodid.advancedays,
+		dsproductprodid.majorsupplier,
+		dsproductprodid.majorsuppliername,
+		dsproductprodid.boutstockday,
+		dsproductprodid.binstockday,
+		dsproductprodid.sluggishdays,
+		dsproductprodid.invaliddate,
+		dsproductprodid.safeqty,
+		dsproductprodid.cy20,
+		dsproductprodid.cy40,
+		dsproductprodid.hq40,
+		dsproductprodid.cy45,
+		dsproductprodid.inpackamt,
+		dsproductprodid.outpackamt,
+		dsproductprodid.volumeunit,
+		dsproductprodid.volume,
+		dsproductprodid.netweight,
+		dsproductprodid.grossweigh,
+		dsproductprodid.bstdcost,
+		dsproductprodid.bavgcost,
+		dsproductprodid.cavgcost,
+		dsproductprodid.ctotalcost,
+		dsproductprodid.udef1,
+		dsproductprodid.udef2,
+		dsproductprodid.priceoftax,
+		dsproductprodid.btotalcost,
+		dsproductprodid.stdunitid,
+		dsproductprodid.stdunitname,
+		dsproductprodid.stdunitengname,
+		dsproductprodid.callamt,
+		dsproductprodid.nweight,
+		dsproductprodid.gweight,
+		dsproductprodid.`long`,
+		dsproductprodid.lunit,
+		dsproductprodid.width,
+		dsproductprodid.higth,
+		dsproductprodid.mvolume,
+		dsproductprodid.probigtype,
+		dsproductprodid.backtaxrate,
+		dsproductprodid.taxitemsid,
+		dsproductprodid.ballamt,
+		dsproductprodid.bcurrstock,
+		dsproductprodid.bsafeallstk,
+		dsproductprodid.csafeallstk,
+		dsproductprodid.ccurrstock,
+		dsproductprodid.cstdcost,
+		dsproductprodid.WareID
+		FROM
+		dsproductprodid
+		WHERE
+		dsproductprodid.WareID=#{WareID}
+	</select>
+
+	<!-- 查询单个调拨单详情 -->
+	<select id="findAllMoveByID" resultType="allotvo">
+		SELECT
+		allott.WareOutID,
+		allott.WareInID,
+		allott.Permitter,
+		allott.MoveDate,
+		allott.MoveNO,
+		allott.MakerID,
+		allott.MoveDetailNO,
+		movedetail.MoveNO,
+		movedetail.ProdID,
+		movedetail.Reason,
+		movedetail.MoveDetailNO,
+		movedetail.MoveBillNO,
+		dsproductprodid.ProdID,
+		dsproductprodid.classid,
+		dsproductprodid.classname,
+		dsproductprodid.barcodeid,
+		dsproductprodid.prodname,
+		dsproductprodid.prodsizi,
+		dsproductprodid.engname,
+		dsproductprodid.currid,
+		dsproductprodid.currname,
+		dsproductprodid.suggestprice,
+		dsproductprodid.salespriceA,
+		dsproductprodid.salespriceB,
+		dsproductprodid.salespriceC,
+		dsproductprodid.salespriceD,
+		dsproductprodid.salespriceE,
+		dsproductprodid.stdprice,
+		dsproductprodid.busitaxrate,
+		dsproductprodid.batchused,
+		dsproductprodid.effectdateused,
+		dsproductprodid.validdateused,
+		dsproductprodid.defvalidday,
+		dsproductprodid.proddesc,
+		dsproductprodid.prodform,
+		dsproductprodid.advancedays,
+		dsproductprodid.majorsupplier,
+		dsproductprodid.majorsuppliername,
+		dsproductprodid.boutstockday,
+		dsproductprodid.binstockday,
+		dsproductprodid.sluggishdays,
+		dsproductprodid.invaliddate,
+		dsproductprodid.safeqty,
+		dsproductprodid.cy20,
+		dsproductprodid.cy40,
+		dsproductprodid.hq40,
+		dsproductprodid.cy45,
+		dsproductprodid.inpackamt,
+		dsproductprodid.outpackamt,
+		dsproductprodid.volumeunit,
+		dsproductprodid.volume,
+		dsproductprodid.netweight,
+		dsproductprodid.grossweigh,
+		dsproductprodid.bstdcost,
+		dsproductprodid.bavgcost,
+		dsproductprodid.cavgcost,
+		dsproductprodid.ctotalcost,
+		dsproductprodid.udef1,
+		dsproductprodid.udef2,
+		dsproductprodid.priceoftax,
+		dsproductprodid.btotalcost,
+		dsproductprodid.stdunitid,
+		dsproductprodid.stdunitname,
+		dsproductprodid.stdunitengname,
+		dsproductprodid.callamt,
+		dsproductprodid.nweight,
+		dsproductprodid.gweight,
+		dsproductprodid.`long`,
+		dsproductprodid.lunit,
+		dsproductprodid.width,
+		dsproductprodid.higth,
+		dsproductprodid.mvolume,
+		dsproductprodid.probigtype,
+		dsproductprodid.backtaxrate,
+		dsproductprodid.taxitemsid,
+		dsproductprodid.ballamt,
+		dsproductprodid.bcurrstock,
+		dsproductprodid.bsafeallstk,
+		dsproductprodid.csafeallstk,
+		dsproductprodid.ccurrstock,
+		dsproductprodid.cstdcost,
+		dsproductprodid.WareID
+		FROM
+		allott
+		INNER JOIN
+		movedetail ON movedetail.MoveNO = allott.MoveNO
+		INNER JOIN
+		dsproductprodid ON movedetail.ProdID = dsproductprodid.ProdID
+		where
+		allott.MoveNO=#{MoveNO}
+	</select>
+
+	<!-- 新增调拨主表 -->
+	<insert id="addMainMove">
+		INSERT INTO `erp`.`allott` (`WareOutID`, `WareInID`,
+		`Permitter`,
+		`MoveDate`, `MoveNO`, `MakerID`, `MoveDetailNO`) VALUES
+		(#{WareOutID}, #{WareInID},
+		#{Permitter}, #{MoveDate}, #{MoveNO},
+		#{MakerID}, #{MoveDetailNO});
+	</insert>
+
+	<!-- 新增调拨详表 -->
+	<insert id="addDetailMove">
+		INSERT INTO `erp`.`movedetail` (`MoveNO`, `ProdID`, `Reason`,
+		`MoveDetailNO`, `MoveBillNO`) VALUES (#{MoveNO}, #{ProdID},
+		#{Reason}, #{MoveDetailNO}, #{MoveBillNO});
+	</insert>
+
+
+>>>>>>> parent of feee0d9... s
 </mapper>    
