@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.erp.liaoshuanchen.dao.OtheroutmainLscMapper" >
+  <resultMap id="BaseResultMap" type="com.example.erp.liaoshuanchen.pojo.OtheroutmainLsc" >
+    <id column="Othid" property="othid" jdbcType="VARCHAR" />
+    <result column="Othdate" property="othdate" jdbcType="DATE" />
+    <result column="outboundTypeNo" property="outboundtypeno" jdbcType="VARCHAR" />
+    <result column="outboundTypeName" property="outboundtypename" jdbcType="VARCHAR" />
+    <result column="warID" property="warid" jdbcType="VARCHAR" />
+    <result column="warName" property="warname" jdbcType="VARCHAR" />
+    <result column="othcomeNo" property="othcomeno" jdbcType="VARCHAR" />
+    <result column="othcomeName" property="othcomename" jdbcType="VARCHAR" />
+    <result column="othcomedeptNo" property="othcomedeptno" jdbcType="VARCHAR" />
+    <result column="othcomedeptName" property="othcomedeptname" jdbcType="VARCHAR" />
+    <result column="Othcomemakemanid" property="othcomemakemanid" jdbcType="VARCHAR" />
+    <result column="Othcomerepeatuse" property="othcomerepeatuse" jdbcType="VARCHAR" />
+    <result column="rid" property="rid" jdbcType="VARCHAR" />
+    <result column="checkstate" property="checkstate" jdbcType="INTEGER" />
+    <result column="safetyone" property="safetyone" jdbcType="VARCHAR" />
+    <result column="safetytwo" property="safetytwo" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="enables" property="enables" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from otheroutmain_lsc
+    where Othid = #{othid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.erp.liaoshuanchen.pojo.OtheroutmainLsc" useGeneratedKeys="true" keyProperty="othid" >
+    insert into otheroutmain_lsc (Othdate, outboundTypeNo, outboundTypeName, 
+      warID, warName, othcomeNo, 
+      othcomeName, othcomedeptNo, othcomedeptName, 
+      Othcomemakemanid, Othcomerepeatuse, rid, 
+      checkstate, safetyone, safetytwo, 
+      remark, enables)
+    values (#{othdate,jdbcType=DATE}, #{outboundtypeno,jdbcType=VARCHAR}, #{outboundtypename,jdbcType=VARCHAR}, 
+      #{warid,jdbcType=VARCHAR}, #{warname,jdbcType=VARCHAR}, #{othcomeno,jdbcType=VARCHAR}, 
+      #{othcomename,jdbcType=VARCHAR}, #{othcomedeptno,jdbcType=VARCHAR}, #{othcomedeptname,jdbcType=VARCHAR}, 
+      #{othcomemakemanid,jdbcType=VARCHAR}, #{othcomerepeatuse,jdbcType=VARCHAR}, #{rid,jdbcType=VARCHAR}, 
+      #{checkstate,jdbcType=INTEGER}, #{safetyone,jdbcType=VARCHAR}, #{safetytwo,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{enables,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.erp.liaoshuanchen.pojo.OtheroutmainLsc" >
+    update otheroutmain_lsc
+    set Othdate = #{othdate,jdbcType=DATE},
+      outboundTypeNo = #{outboundtypeno,jdbcType=VARCHAR},
+      outboundTypeName = #{outboundtypename,jdbcType=VARCHAR},
+      warID = #{warid,jdbcType=VARCHAR},
+      warName = #{warname,jdbcType=VARCHAR},
+      othcomeNo = #{othcomeno,jdbcType=VARCHAR},
+      othcomeName = #{othcomename,jdbcType=VARCHAR},
+      othcomedeptNo = #{othcomedeptno,jdbcType=VARCHAR},
+      othcomedeptName = #{othcomedeptname,jdbcType=VARCHAR},
+      Othcomemakemanid = #{othcomemakemanid,jdbcType=VARCHAR},
+      Othcomerepeatuse = #{othcomerepeatuse,jdbcType=VARCHAR},
+      rid = #{rid,jdbcType=VARCHAR},
+      checkstate = #{checkstate,jdbcType=INTEGER},
+      safetyone = #{safetyone,jdbcType=VARCHAR},
+      safetytwo = #{safetytwo,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      enables = #{enables,jdbcType=INTEGER}
+    where Othid = #{othid,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select Othid, Othdate, outboundTypeNo, outboundTypeName, warID, warName, othcomeNo, 
+    othcomeName, othcomedeptNo, othcomedeptName, Othcomemakemanid, Othcomerepeatuse, 
+    rid, checkstate, safetyone, safetytwo, remark, enables
+    from otheroutmain_lsc
+    where Othid = #{othid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select Othid, Othdate, outboundTypeNo, outboundTypeName, warID, warName, othcomeNo, 
+    othcomeName, othcomedeptNo, othcomedeptName, Othcomemakemanid, Othcomerepeatuse, 
+    rid, checkstate, safetyone, safetytwo, remark, enables
+    from otheroutmain_lsc
+  </select>
+</mapper>
