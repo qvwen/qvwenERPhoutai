@@ -83,7 +83,7 @@
 		LEFT JOIN `function` ON
 		permission.fid = `function`.fid
 		WHERE
-		`user`.account = #{ac} AND
+		`user`.account = #{ac} AND 
 		`user`.Userpwd =#{pws}
 	</select>
 </mapper>
