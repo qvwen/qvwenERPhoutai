@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 
 package com.example.erp.wenwei.pojo;
 
 import java.util.Date;
 
-=======
-
-package com.example.erp.wenwei.pojo;
-
-import java.util.Date;
-
->>>>>>> parent of feee0d9... s
 public class OutwareEntity implements java.io.Serializable {
     /** 版本号 */
     private static final long serialVersionUID = 1429697172965945421L;
