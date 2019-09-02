@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.erp.liaoshuanchen.dao.OthercomeLscMapper" >
+  <resultMap id="BaseResultMap" type="com.example.erp.liaoshuanchen.pojo.OthercomeLsc" >
+    <id column="othcomeid" property="othcomeid" jdbcType="VARCHAR" />
+    <result column="othcomedate" property="othcomedate" jdbcType="DATE" />
+    <result column="othcometypeid" property="othcometypeid" jdbcType="VARCHAR" />
+    <result column="othcometypeName" property="othcometypename" jdbcType="VARCHAR" />
+    <result column="warID" property="warid" jdbcType="VARCHAR" />
+    <result column="warName" property="warname" jdbcType="VARCHAR" />
+    <result column="othcomeNo" property="othcomeno" jdbcType="VARCHAR" />
+    <result column="othcomeName" property="othcomename" jdbcType="VARCHAR" />
+    <result column="othcomedeptNo" property="othcomedeptno" jdbcType="VARCHAR" />
+    <result column="othcomedeptName" property="othcomedeptname" jdbcType="VARCHAR" />
+    <result column="Othcomemakemanid" property="othcomemakemanid" jdbcType="VARCHAR" />
+    <result column="Othcomerepeatuse" property="othcomerepeatuse" jdbcType="VARCHAR" />
+    <result column="rid" property="rid" jdbcType="VARCHAR" />
+    <result column="checkstate" property="checkstate" jdbcType="INTEGER" />
+    <result column="safetyone" property="safetyone" jdbcType="VARCHAR" />
+    <result column="safetytwo" property="safetytwo" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="enables" property="enables" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from othercome_lsc
+    where othcomeid = #{othcomeid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.erp.liaoshuanchen.pojo.OthercomeLsc" useGeneratedKeys="true" keyProperty="othcomeid" >
+    insert into othercome_lsc (othcomedate, othcometypeid, othcometypeName, 
+      warID, warName, othcomeNo, 
+      othcomeName, othcomedeptNo, othcomedeptName, 
+      Othcomemakemanid, Othcomerepeatuse, rid, 
+      checkstate, safetyone, safetytwo, 
+      remark, enables)
+    values (#{othcomedate,jdbcType=DATE}, #{othcometypeid,jdbcType=VARCHAR}, #{othcometypename,jdbcType=VARCHAR}, 
+      #{warid,jdbcType=VARCHAR}, #{warname,jdbcType=VARCHAR}, #{othcomeno,jdbcType=VARCHAR}, 
+      #{othcomename,jdbcType=VARCHAR}, #{othcomedeptno,jdbcType=VARCHAR}, #{othcomedeptname,jdbcType=VARCHAR}, 
+      #{othcomemakemanid,jdbcType=VARCHAR}, #{othcomerepeatuse,jdbcType=VARCHAR}, #{rid,jdbcType=VARCHAR}, 
+      #{checkstate,jdbcType=INTEGER}, #{safetyone,jdbcType=VARCHAR}, #{safetytwo,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{enables,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.erp.liaoshuanchen.pojo.OthercomeLsc" >
+    update othercome_lsc
+    set othcomedate = #{othcomedate,jdbcType=DATE},
+      othcometypeid = #{othcometypeid,jdbcType=VARCHAR},
+      othcometypeName = #{othcometypename,jdbcType=VARCHAR},
+      warID = #{warid,jdbcType=VARCHAR},
+      warName = #{warname,jdbcType=VARCHAR},
+      othcomeNo = #{othcomeno,jdbcType=VARCHAR},
+      othcomeName = #{othcomename,jdbcType=VARCHAR},
+      othcomedeptNo = #{othcomedeptno,jdbcType=VARCHAR},
+      othcomedeptName = #{othcomedeptname,jdbcType=VARCHAR},
+      Othcomemakemanid = #{othcomemakemanid,jdbcType=VARCHAR},
+      Othcomerepeatuse = #{othcomerepeatuse,jdbcType=VARCHAR},
+      rid = #{rid,jdbcType=VARCHAR},
+      checkstate = #{checkstate,jdbcType=INTEGER},
+      safetyone = #{safetyone,jdbcType=VARCHAR},
+      safetytwo = #{safetytwo,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      enables = #{enables,jdbcType=INTEGER}
+    where othcomeid = #{othcomeid,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select othcomeid, othcomedate, othcometypeid, othcometypeName, warID, warName, othcomeNo, 
+    othcomeName, othcomedeptNo, othcomedeptName, Othcomemakemanid, Othcomerepeatuse, 
+    rid, checkstate, safetyone, safetytwo, remark, enables
+    from othercome_lsc
+    where othcomeid = #{othcomeid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select othcomeid, othcomedate, othcometypeid, othcometypeName, warID, warName, othcomeNo, 
+    othcomeName, othcomedeptNo, othcomedeptName, Othcomemakemanid, Othcomerepeatuse, 
+    rid, checkstate, safetyone, safetytwo, remark, enables
+    from othercome_lsc
+  </select>
+</mapper>

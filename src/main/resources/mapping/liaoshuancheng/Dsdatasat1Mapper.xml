@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.erp.liaoshuanchen.dao.Dsdatasat1Mapper" >
+  <resultMap id="BaseResultMap" type="com.example.erp.liaoshuanchen.pojo.Dsdatasat1" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="fundsattribution" property="fundsattribution" jdbcType="VARCHAR" />
+    <result column="classid" property="classid" jdbcType="VARCHAR" />
+    <result column="classname" property="classname" jdbcType="VARCHAR" />
+    <result column="areaid" property="areaid" jdbcType="VARCHAR" />
+    <result column="areaname" property="areaname" jdbcType="VARCHAR" />
+    <result column="currencyid" property="currencyid" jdbcType="VARCHAR" />
+    <result column="currencyname" property="currencyname" jdbcType="VARCHAR" />
+    <result column="currencyshortname" property="currencyshortname" jdbcType="VARCHAR" />
+    <result column="fullname" property="fullname" jdbcType="VARCHAR" />
+    <result column="isforeign" property="isforeign" jdbcType="VARCHAR" />
+    <result column="taxno" property="taxno" jdbcType="VARCHAR" />
+    <result column="shortname" property="shortname" jdbcType="VARCHAR" />
+    <result column="chiefname" property="chiefname" jdbcType="VARCHAR" />
+    <result column="capitalization" property="capitalization" jdbcType="VARCHAR" />
+    <result column="linkman" property="linkman" jdbcType="VARCHAR" />
+    <result column="Telephone1" property="telephone1" jdbcType="VARCHAR" />
+    <result column="Telephone2" property="telephone2" jdbcType="VARCHAR" />
+    <result column="Telephone3" property="telephone3" jdbcType="VARCHAR" />
+    <result column="mobiletel" property="mobiletel" jdbcType="VARCHAR" />
+    <result column="personid" property="personid" jdbcType="VARCHAR" />
+    <result column="personname" property="personname" jdbcType="VARCHAR" />
+    <result column="faxno" property="faxno" jdbcType="VARCHAR" />
+    <result column="industrialclass" property="industrialclass" jdbcType="VARCHAR" />
+    <result column="meail" property="meail" jdbcType="VARCHAR" />
+    <result column="webaddress" property="webaddress" jdbcType="VARCHAR" />
+    <result column="priceoftax" property="priceoftax" jdbcType="VARCHAR" />
+    <result column="gatherother" property="gatherother" jdbcType="VARCHAR" />
+    <result column="invotypeid" property="invotypeid" jdbcType="VARCHAR" />
+    <result column="invotypename" property="invotypename" jdbcType="VARCHAR" />
+    <result column="engfullname" property="engfullname" jdbcType="VARCHAR" />
+    <result column="engshorname" property="engshorname" jdbcType="VARCHAR" />
+    <result column="englinkman" property="englinkman" jdbcType="VARCHAR" />
+    <result column="englinkmanprof" property="englinkmanprof" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="daysofbillexpire" property="daysofbillexpire" jdbcType="VARCHAR" />
+    <result column="Addfield1" property="addfield1" jdbcType="VARCHAR" />
+    <result column="Addfield2" property="addfield2" jdbcType="VARCHAR" />
+    <result column="earliesttrad" property="earliesttrad" jdbcType="DATE" />
+    <result column="firsttradedate" property="firsttradedate" jdbcType="DATE" />
+    <result column="latelytradedate" property="latelytradedate" jdbcType="DATE" />
+    <result column="latelyreturndate" property="latelyreturndate" jdbcType="DATE" />
+    <result column="accreceivable" property="accreceivable" jdbcType="VARCHAR" />
+    <result column="accreceivablename" property="accreceivablename" jdbcType="VARCHAR" />
+    <result column="accadvrecv" property="accadvrecv" jdbcType="VARCHAR" />
+    <result column="accadvrecvname" property="accadvrecvname" jdbcType="VARCHAR" />
+    <result column="bankaccount" property="bankaccount" jdbcType="VARCHAR" />
+    <result column="bankid" property="bankid" jdbcType="VARCHAR" />
+    <result column="bankname" property="bankname" jdbcType="VARCHAR" />
+    <result column="creditlevel" property="creditlevel" jdbcType="VARCHAR" />
+    <result column="amountquota" property="amountquota" jdbcType="VARCHAR" />
+    <result column="billquota" property="billquota" jdbcType="VARCHAR" />
+    <result column="recvway" property="recvway" jdbcType="VARCHAR" />
+    <result column="distdays" property="distdays" jdbcType="VARCHAR" />
+    <result column="dayofclose" property="dayofclose" jdbcType="DATE" />
+    <result column="dayofrecv" property="dayofrecv" jdbcType="DATE" />
+    <result column="term" property="term" jdbcType="VARCHAR" />
+    <result column="invaliddate" property="invaliddate" jdbcType="DATE" />
+    <result column="termarea" property="termarea" jdbcType="VARCHAR" />
+    <result column="payway" property="payway" jdbcType="VARCHAR" />
+    <result column="accreceivalietemp" property="accreceivalietemp" jdbcType="VARCHAR" />
+    <result column="accreceivalietempname" property="accreceivalietempname" jdbcType="VARCHAR" />
+    <result column="Startadvrecv" property="startadvrecv" jdbcType="VARCHAR" />
+    <result column="startreceivable" property="startreceivable" jdbcType="VARCHAR" />
+    <result column="curadvrecv" property="curadvrecv" jdbcType="VARCHAR" />
+    <result column="curreceivable" property="curreceivable" jdbcType="VARCHAR" />
+    <result column="remainquota" property="remainquota" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dsdatasat1
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.erp.liaoshuanchen.pojo.Dsdatasat1" useGeneratedKeys="true" keyProperty="id" >
+    insert into dsdatasat1 (fundsattribution, classid, classname, 
+      areaid, areaname, currencyid, 
+      currencyname, currencyshortname, fullname, 
+      isforeign, taxno, shortname, 
+      chiefname, capitalization, linkman, 
+      Telephone1, Telephone2, Telephone3, 
+      mobiletel, personid, personname, 
+      faxno, industrialclass, meail, 
+      webaddress, priceoftax, gatherother, 
+      invotypeid, invotypename, engfullname, 
+      engshorname, englinkman, englinkmanprof, 
+      memo, daysofbillexpire, Addfield1, 
+      Addfield2, earliesttrad, firsttradedate, 
+      latelytradedate, latelyreturndate, accreceivable, 
+      accreceivablename, accadvrecv, accadvrecvname, 
+      bankaccount, bankid, bankname, 
+      creditlevel, amountquota, billquota, 
+      recvway, distdays, dayofclose, 
+      dayofrecv, term, invaliddate, 
+      termarea, payway, accreceivalietemp, 
+      accreceivalietempname, Startadvrecv, startreceivable, 
+      curadvrecv, curreceivable, remainquota
+      )
+    values (#{fundsattribution,jdbcType=VARCHAR}, #{classid,jdbcType=VARCHAR}, #{classname,jdbcType=VARCHAR}, 
+      #{areaid,jdbcType=VARCHAR}, #{areaname,jdbcType=VARCHAR}, #{currencyid,jdbcType=VARCHAR}, 
+      #{currencyname,jdbcType=VARCHAR}, #{currencyshortname,jdbcType=VARCHAR}, #{fullname,jdbcType=VARCHAR}, 
+      #{isforeign,jdbcType=VARCHAR}, #{taxno,jdbcType=VARCHAR}, #{shortname,jdbcType=VARCHAR}, 
+      #{chiefname,jdbcType=VARCHAR}, #{capitalization,jdbcType=VARCHAR}, #{linkman,jdbcType=VARCHAR}, 
+      #{telephone1,jdbcType=VARCHAR}, #{telephone2,jdbcType=VARCHAR}, #{telephone3,jdbcType=VARCHAR}, 
+      #{mobiletel,jdbcType=VARCHAR}, #{personid,jdbcType=VARCHAR}, #{personname,jdbcType=VARCHAR}, 
+      #{faxno,jdbcType=VARCHAR}, #{industrialclass,jdbcType=VARCHAR}, #{meail,jdbcType=VARCHAR}, 
+      #{webaddress,jdbcType=VARCHAR}, #{priceoftax,jdbcType=VARCHAR}, #{gatherother,jdbcType=VARCHAR}, 
+      #{invotypeid,jdbcType=VARCHAR}, #{invotypename,jdbcType=VARCHAR}, #{engfullname,jdbcType=VARCHAR}, 
+      #{engshorname,jdbcType=VARCHAR}, #{englinkman,jdbcType=VARCHAR}, #{englinkmanprof,jdbcType=VARCHAR}, 
+      #{memo,jdbcType=VARCHAR}, #{daysofbillexpire,jdbcType=VARCHAR}, #{addfield1,jdbcType=VARCHAR}, 
+      #{addfield2,jdbcType=VARCHAR}, #{earliesttrad,jdbcType=DATE}, #{firsttradedate,jdbcType=DATE}, 
+      #{latelytradedate,jdbcType=DATE}, #{latelyreturndate,jdbcType=DATE}, #{accreceivable,jdbcType=VARCHAR}, 
+      #{accreceivablename,jdbcType=VARCHAR}, #{accadvrecv,jdbcType=VARCHAR}, #{accadvrecvname,jdbcType=VARCHAR}, 
+      #{bankaccount,jdbcType=VARCHAR}, #{bankid,jdbcType=VARCHAR}, #{bankname,jdbcType=VARCHAR}, 
+      #{creditlevel,jdbcType=VARCHAR}, #{amountquota,jdbcType=VARCHAR}, #{billquota,jdbcType=VARCHAR}, 
+      #{recvway,jdbcType=VARCHAR}, #{distdays,jdbcType=VARCHAR}, #{dayofclose,jdbcType=DATE}, 
+      #{dayofrecv,jdbcType=DATE}, #{term,jdbcType=VARCHAR}, #{invaliddate,jdbcType=DATE}, 
+      #{termarea,jdbcType=VARCHAR}, #{payway,jdbcType=VARCHAR}, #{accreceivalietemp,jdbcType=VARCHAR}, 
+      #{accreceivalietempname,jdbcType=VARCHAR}, #{startadvrecv,jdbcType=VARCHAR}, #{startreceivable,jdbcType=VARCHAR}, 
+      #{curadvrecv,jdbcType=VARCHAR}, #{curreceivable,jdbcType=VARCHAR}, #{remainquota,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.erp.liaoshuanchen.pojo.Dsdatasat1" >
+    update dsdatasat1
+    set fundsattribution = #{fundsattribution,jdbcType=VARCHAR},
+      classid = #{classid,jdbcType=VARCHAR},
+      classname = #{classname,jdbcType=VARCHAR},
+      areaid = #{areaid,jdbcType=VARCHAR},
+      areaname = #{areaname,jdbcType=VARCHAR},
+      currencyid = #{currencyid,jdbcType=VARCHAR},
+      currencyname = #{currencyname,jdbcType=VARCHAR},
+      currencyshortname = #{currencyshortname,jdbcType=VARCHAR},
+      fullname = #{fullname,jdbcType=VARCHAR},
+      isforeign = #{isforeign,jdbcType=VARCHAR},
+      taxno = #{taxno,jdbcType=VARCHAR},
+      shortname = #{shortname,jdbcType=VARCHAR},
+      chiefname = #{chiefname,jdbcType=VARCHAR},
+      capitalization = #{capitalization,jdbcType=VARCHAR},
+      linkman = #{linkman,jdbcType=VARCHAR},
+      Telephone1 = #{telephone1,jdbcType=VARCHAR},
+      Telephone2 = #{telephone2,jdbcType=VARCHAR},
+      Telephone3 = #{telephone3,jdbcType=VARCHAR},
+      mobiletel = #{mobiletel,jdbcType=VARCHAR},
+      personid = #{personid,jdbcType=VARCHAR},
+      personname = #{personname,jdbcType=VARCHAR},
+      faxno = #{faxno,jdbcType=VARCHAR},
+      industrialclass = #{industrialclass,jdbcType=VARCHAR},
+      meail = #{meail,jdbcType=VARCHAR},
+      webaddress = #{webaddress,jdbcType=VARCHAR},
+      priceoftax = #{priceoftax,jdbcType=VARCHAR},
+      gatherother = #{gatherother,jdbcType=VARCHAR},
+      invotypeid = #{invotypeid,jdbcType=VARCHAR},
+      invotypename = #{invotypename,jdbcType=VARCHAR},
+      engfullname = #{engfullname,jdbcType=VARCHAR},
+      engshorname = #{engshorname,jdbcType=VARCHAR},
+      englinkman = #{englinkman,jdbcType=VARCHAR},
+      englinkmanprof = #{englinkmanprof,jdbcType=VARCHAR},
+      memo = #{memo,jdbcType=VARCHAR},
+      daysofbillexpire = #{daysofbillexpire,jdbcType=VARCHAR},
+      Addfield1 = #{addfield1,jdbcType=VARCHAR},
+      Addfield2 = #{addfield2,jdbcType=VARCHAR},
+      earliesttrad = #{earliesttrad,jdbcType=DATE},
+      firsttradedate = #{firsttradedate,jdbcType=DATE},
+      latelytradedate = #{latelytradedate,jdbcType=DATE},
+      latelyreturndate = #{latelyreturndate,jdbcType=DATE},
+      accreceivable = #{accreceivable,jdbcType=VARCHAR},
+      accreceivablename = #{accreceivablename,jdbcType=VARCHAR},
+      accadvrecv = #{accadvrecv,jdbcType=VARCHAR},
+      accadvrecvname = #{accadvrecvname,jdbcType=VARCHAR},
+      bankaccount = #{bankaccount,jdbcType=VARCHAR},
+      bankid = #{bankid,jdbcType=VARCHAR},
+      bankname = #{bankname,jdbcType=VARCHAR},
+      creditlevel = #{creditlevel,jdbcType=VARCHAR},
+      amountquota = #{amountquota,jdbcType=VARCHAR},
+      billquota = #{billquota,jdbcType=VARCHAR},
+      recvway = #{recvway,jdbcType=VARCHAR},
+      distdays = #{distdays,jdbcType=VARCHAR},
+      dayofclose = #{dayofclose,jdbcType=DATE},
+      dayofrecv = #{dayofrecv,jdbcType=DATE},
+      term = #{term,jdbcType=VARCHAR},
+      invaliddate = #{invaliddate,jdbcType=DATE},
+      termarea = #{termarea,jdbcType=VARCHAR},
+      payway = #{payway,jdbcType=VARCHAR},
+      accreceivalietemp = #{accreceivalietemp,jdbcType=VARCHAR},
+      accreceivalietempname = #{accreceivalietempname,jdbcType=VARCHAR},
+      Startadvrecv = #{startadvrecv,jdbcType=VARCHAR},
+      startreceivable = #{startreceivable,jdbcType=VARCHAR},
+      curadvrecv = #{curadvrecv,jdbcType=VARCHAR},
+      curreceivable = #{curreceivable,jdbcType=VARCHAR},
+      remainquota = #{remainquota,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select id, fundsattribution, classid, classname, areaid, areaname, currencyid, currencyname, 
+    currencyshortname, fullname, isforeign, taxno, shortname, chiefname, capitalization, 
+    linkman, Telephone1, Telephone2, Telephone3, mobiletel, personid, personname, faxno, 
+    industrialclass, meail, webaddress, priceoftax, gatherother, invotypeid, invotypename, 
+    engfullname, engshorname, englinkman, englinkmanprof, memo, daysofbillexpire, Addfield1, 
+    Addfield2, earliesttrad, firsttradedate, latelytradedate, latelyreturndate, accreceivable, 
+    accreceivablename, accadvrecv, accadvrecvname, bankaccount, bankid, bankname, creditlevel, 
+    amountquota, billquota, recvway, distdays, dayofclose, dayofrecv, term, invaliddate, 
+    termarea, payway, accreceivalietemp, accreceivalietempname, Startadvrecv, startreceivable, 
+    curadvrecv, curreceivable, remainquota
+    from dsdatasat1
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, fundsattribution, classid, classname, areaid, areaname, currencyid, currencyname, 
+    currencyshortname, fullname, isforeign, taxno, shortname, chiefname, capitalization, 
+    linkman, Telephone1, Telephone2, Telephone3, mobiletel, personid, personname, faxno, 
+    industrialclass, meail, webaddress, priceoftax, gatherother, invotypeid, invotypename, 
+    engfullname, engshorname, englinkman, englinkmanprof, memo, daysofbillexpire, Addfield1, 
+    Addfield2, earliesttrad, firsttradedate, latelytradedate, latelyreturndate, accreceivable, 
+    accreceivablename, accadvrecv, accadvrecvname, bankaccount, bankid, bankname, creditlevel, 
+    amountquota, billquota, recvway, distdays, dayofclose, dayofrecv, term, invaliddate, 
+    termarea, payway, accreceivalietemp, accreceivalietempname, Startadvrecv, startreceivable, 
+    curadvrecv, curreceivable, remainquota
+    from dsdatasat1
+  </select>
+</mapper>
