@@ -40,7 +40,6 @@ public class AllotAction {
 		return 1;
 	}
 }
-<<<<<<< wen
 <<<<<<< HEAD
 =======
 =======
@@ -88,5 +87,3 @@ public class AllotAction {
 }
 >>>>>>> parent of feee0d9... s
 >>>>>>> refs/heads/master
-=======
->>>>>>> ac531e3 Revert "Revert "s""
