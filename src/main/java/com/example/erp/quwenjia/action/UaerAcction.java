@@ -20,6 +20,6 @@ public class UaerAcction {
 	
 	@GetMapping("/user")
 	public user  getUser() {
-		return biz.getUser("3209799669", "quwenjia20011021");
+		return biz.getUser("admin", "202cb962ac59075b964b07152d234b70");
 	}
 }

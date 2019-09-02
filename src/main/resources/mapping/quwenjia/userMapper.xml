@@ -76,7 +76,7 @@
 		FROM
 		`user`
 		LEFT JOIN userandrole ON `user`.uid =
-		userandrole.Urid
+		userandrole.uid
 		LEFT JOIN role ON userandrole.rid = role.rid
 		LEFT
 		JOIN permission ON role.rid = permission.rid
