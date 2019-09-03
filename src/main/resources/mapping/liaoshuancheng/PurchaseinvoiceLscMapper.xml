@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.erp.liaoshuanchen.dao.PurchaseinvoiceLscMapper" >
+  <resultMap id="BaseResultMap" type="com.example.erp.liaoshuanchen.pojo.PurchaseinvoiceLsc" >
+    <id column="billId" property="billid" jdbcType="VARCHAR" />
+    <result column="matmainaffordid" property="matmainaffordid" jdbcType="VARCHAR" />
+    <result column="matmainafford" property="matmainafford" jdbcType="VARCHAR" />
+    <result column="billDate" property="billdate" jdbcType="DATE" />
+    <result column="purType" property="purtype" jdbcType="INTEGER" />
+    <result column="priceWhetherTax" property="pricewhethertax" jdbcType="INTEGER" />
+    <result column="invoiceNumber" property="invoicenumber" jdbcType="VARCHAR" />
+    <result column="purchaseCheckStatus" property="purchasecheckstatus" jdbcType="INTEGER" />
+    <result column="invNo" property="invno" jdbcType="VARCHAR" />
+    <result column="invName" property="invname" jdbcType="VARCHAR" />
+    <result column="proofNo" property="proofno" jdbcType="VARCHAR" />
+    <result column="currencyTypeID" property="currencytypeid" jdbcType="VARCHAR" />
+    <result column="currencyTypeName" property="currencytypename" jdbcType="VARCHAR" />
+    <result column="priceDifference" property="pricedifference" jdbcType="VARCHAR" />
+    <result column="exchRate" property="exchrate" jdbcType="REAL" />
+    <result column="buyerID" property="buyerid" jdbcType="VARCHAR" />
+    <result column="buyerName" property="buyername" jdbcType="VARCHAR" />
+    <result column="departmentID" property="departmentid" jdbcType="VARCHAR" />
+    <result column="departmentName" property="departmentname" jdbcType="VARCHAR" />
+    <result column="subordinateProjectID" property="subordinateprojectid" jdbcType="VARCHAR" />
+    <result column="subordinateProjectName" property="subordinateprojectname" jdbcType="VARCHAR" />
+    <result column="makingPersonnelID" property="makingpersonnelid" jdbcType="VARCHAR" />
+    <result column="makingPersonnelName" property="makingpersonnelname" jdbcType="VARCHAR" />
+    <result column="reviewingOfficerID" property="reviewingofficerid" jdbcType="VARCHAR" />
+    <result column="reviewingOfficerName" property="reviewingofficername" jdbcType="VARCHAR" />
+    <result column="dutNo" property="dutno" jdbcType="VARCHAR" />
+    <result column="dutToName" property="duttoname" jdbcType="VARCHAR" />
+    <result column="gatherStyle" property="gatherstyle" jdbcType="INTEGER" />
+    <result column="gatherDelay" property="gatherdelay" jdbcType="INTEGER" />
+    <result column="prepayDay" property="prepayday" jdbcType="DATE" />
+    <result column="accMonth" property="accmonth" jdbcType="DATE" />
+    <result column="cleID1" property="cleid1" jdbcType="VARCHAR" />
+    <result column="cle1Name" property="cle1name" jdbcType="VARCHAR" />
+    <result column="cleID2" property="cleid2" jdbcType="VARCHAR" />
+    <result column="cleName2" property="clename2" jdbcType="VARCHAR" />
+    <result column="cleID3" property="cleid3" jdbcType="VARCHAR" />
+    <result column="cleName3" property="clename3" jdbcType="VARCHAR" />
+    <result column="custom1" property="custom1" jdbcType="VARCHAR" />
+    <result column="custom2" property="custom2" jdbcType="VARCHAR" />
+    <result column="safetyone" property="safetyone" jdbcType="VARCHAR" />
+    <result column="safetytwo" property="safetytwo" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="RemarkZD1" property="remarkzd1" jdbcType="VARCHAR" />
+    <result column="RemarkZD2" property="remarkzd2" jdbcType="VARCHAR" />
+    <result column="enables" property="enables" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from purchaseinvoice_lsc
+    where billId = #{billid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.erp.liaoshuanchen.pojo.PurchaseinvoiceLsc" useGeneratedKeys="true" keyProperty="matmainaffordid" >
+    insert into purchaseinvoice_lsc (billId, matmainafford, billDate, 
+      purType, priceWhetherTax, invoiceNumber, 
+      purchaseCheckStatus, invNo, invName, 
+      proofNo, currencyTypeID, currencyTypeName, 
+      priceDifference, exchRate, buyerID, 
+      buyerName, departmentID, departmentName, 
+      subordinateProjectID, subordinateProjectName, 
+      makingPersonnelID, makingPersonnelName, 
+      reviewingOfficerID, reviewingOfficerName, 
+      dutNo, dutToName, gatherStyle, 
+      gatherDelay, prepayDay, accMonth, 
+      cleID1, cle1Name, cleID2, 
+      cleName2, cleID3, cleName3, 
+      custom1, custom2, safetyone, 
+      safetytwo, remark, RemarkZD1, 
+      RemarkZD2, enables)
+    values (#{billid,jdbcType=VARCHAR}, #{matmainafford,jdbcType=VARCHAR}, #{billdate,jdbcType=DATE}, 
+      #{purtype,jdbcType=INTEGER}, #{pricewhethertax,jdbcType=INTEGER}, #{invoicenumber,jdbcType=VARCHAR}, 
+      #{purchasecheckstatus,jdbcType=INTEGER}, #{invno,jdbcType=VARCHAR}, #{invname,jdbcType=VARCHAR}, 
+      #{proofno,jdbcType=VARCHAR}, #{currencytypeid,jdbcType=VARCHAR}, #{currencytypename,jdbcType=VARCHAR}, 
+      #{pricedifference,jdbcType=VARCHAR}, #{exchrate,jdbcType=REAL}, #{buyerid,jdbcType=VARCHAR}, 
+      #{buyername,jdbcType=VARCHAR}, #{departmentid,jdbcType=VARCHAR}, #{departmentname,jdbcType=VARCHAR}, 
+      #{subordinateprojectid,jdbcType=VARCHAR}, #{subordinateprojectname,jdbcType=VARCHAR}, 
+      #{makingpersonnelid,jdbcType=VARCHAR}, #{makingpersonnelname,jdbcType=VARCHAR}, 
+      #{reviewingofficerid,jdbcType=VARCHAR}, #{reviewingofficername,jdbcType=VARCHAR}, 
+      #{dutno,jdbcType=VARCHAR}, #{duttoname,jdbcType=VARCHAR}, #{gatherstyle,jdbcType=INTEGER}, 
+      #{gatherdelay,jdbcType=INTEGER}, #{prepayday,jdbcType=DATE}, #{accmonth,jdbcType=DATE}, 
+      #{cleid1,jdbcType=VARCHAR}, #{cle1name,jdbcType=VARCHAR}, #{cleid2,jdbcType=VARCHAR}, 
+      #{clename2,jdbcType=VARCHAR}, #{cleid3,jdbcType=VARCHAR}, #{clename3,jdbcType=VARCHAR}, 
+      #{custom1,jdbcType=VARCHAR}, #{custom2,jdbcType=VARCHAR}, #{safetyone,jdbcType=VARCHAR}, 
+      #{safetytwo,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{remarkzd1,jdbcType=VARCHAR}, 
+      #{remarkzd2,jdbcType=VARCHAR}, #{enables,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.erp.liaoshuanchen.pojo.PurchaseinvoiceLsc" >
+    update purchaseinvoice_lsc
+    set matmainaffordid = #{matmainaffordid,jdbcType=VARCHAR},
+      matmainafford = #{matmainafford,jdbcType=VARCHAR},
+      billDate = #{billdate,jdbcType=DATE},
+      purType = #{purtype,jdbcType=INTEGER},
+      priceWhetherTax = #{pricewhethertax,jdbcType=INTEGER},
+      invoiceNumber = #{invoicenumber,jdbcType=VARCHAR},
+      purchaseCheckStatus = #{purchasecheckstatus,jdbcType=INTEGER},
+      invNo = #{invno,jdbcType=VARCHAR},
+      invName = #{invname,jdbcType=VARCHAR},
+      proofNo = #{proofno,jdbcType=VARCHAR},
+      currencyTypeID = #{currencytypeid,jdbcType=VARCHAR},
+      currencyTypeName = #{currencytypename,jdbcType=VARCHAR},
+      priceDifference = #{pricedifference,jdbcType=VARCHAR},
+      exchRate = #{exchrate,jdbcType=REAL},
+      buyerID = #{buyerid,jdbcType=VARCHAR},
+      buyerName = #{buyername,jdbcType=VARCHAR},
+      departmentID = #{departmentid,jdbcType=VARCHAR},
+      departmentName = #{departmentname,jdbcType=VARCHAR},
+      subordinateProjectID = #{subordinateprojectid,jdbcType=VARCHAR},
+      subordinateProjectName = #{subordinateprojectname,jdbcType=VARCHAR},
+      makingPersonnelID = #{makingpersonnelid,jdbcType=VARCHAR},
+      makingPersonnelName = #{makingpersonnelname,jdbcType=VARCHAR},
+      reviewingOfficerID = #{reviewingofficerid,jdbcType=VARCHAR},
+      reviewingOfficerName = #{reviewingofficername,jdbcType=VARCHAR},
+      dutNo = #{dutno,jdbcType=VARCHAR},
+      dutToName = #{duttoname,jdbcType=VARCHAR},
+      gatherStyle = #{gatherstyle,jdbcType=INTEGER},
+      gatherDelay = #{gatherdelay,jdbcType=INTEGER},
+      prepayDay = #{prepayday,jdbcType=DATE},
+      accMonth = #{accmonth,jdbcType=DATE},
+      cleID1 = #{cleid1,jdbcType=VARCHAR},
+      cle1Name = #{cle1name,jdbcType=VARCHAR},
+      cleID2 = #{cleid2,jdbcType=VARCHAR},
+      cleName2 = #{clename2,jdbcType=VARCHAR},
+      cleID3 = #{cleid3,jdbcType=VARCHAR},
+      cleName3 = #{clename3,jdbcType=VARCHAR},
+      custom1 = #{custom1,jdbcType=VARCHAR},
+      custom2 = #{custom2,jdbcType=VARCHAR},
+      safetyone = #{safetyone,jdbcType=VARCHAR},
+      safetytwo = #{safetytwo,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      RemarkZD1 = #{remarkzd1,jdbcType=VARCHAR},
+      RemarkZD2 = #{remarkzd2,jdbcType=VARCHAR},
+      enables = #{enables,jdbcType=INTEGER}
+    where billId = #{billid,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select billId, matmainaffordid, matmainafford, billDate, purType, priceWhetherTax, 
+    invoiceNumber, purchaseCheckStatus, invNo, invName, proofNo, currencyTypeID, currencyTypeName, 
+    priceDifference, exchRate, buyerID, buyerName, departmentID, departmentName, subordinateProjectID, 
+    subordinateProjectName, makingPersonnelID, makingPersonnelName, reviewingOfficerID, 
+    reviewingOfficerName, dutNo, dutToName, gatherStyle, gatherDelay, prepayDay, accMonth, 
+    cleID1, cle1Name, cleID2, cleName2, cleID3, cleName3, custom1, custom2, safetyone, 
+    safetytwo, remark, RemarkZD1, RemarkZD2, enables
+    from purchaseinvoice_lsc
+    where billId = #{billid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select billId, matmainaffordid, matmainafford, billDate, purType, priceWhetherTax, 
+    invoiceNumber, purchaseCheckStatus, invNo, invName, proofNo, currencyTypeID, currencyTypeName, 
+    priceDifference, exchRate, buyerID, buyerName, departmentID, departmentName, subordinateProjectID, 
+    subordinateProjectName, makingPersonnelID, makingPersonnelName, reviewingOfficerID, 
+    reviewingOfficerName, dutNo, dutToName, gatherStyle, gatherDelay, prepayDay, accMonth, 
+    cleID1, cle1Name, cleID2, cleName2, cleID3, cleName3, custom1, custom2, safetyone, 
+    safetytwo, remark, RemarkZD1, RemarkZD2, enables
+    from purchaseinvoice_lsc
+  </select>
+</mapper>

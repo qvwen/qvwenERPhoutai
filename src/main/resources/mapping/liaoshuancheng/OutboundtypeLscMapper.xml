@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.erp.liaoshuanchen.dao.OutboundtypeLscMapper" >
+  <resultMap id="BaseResultMap" type="com.example.erp.liaoshuanchen.pojo.OutboundtypeLsc" >
+    <id column="outboundTypeNo" property="outboundtypeno" jdbcType="VARCHAR" />
+    <result column="outboundTypeName" property="outboundtypename" jdbcType="VARCHAR" />
+    <result column="englishiName" property="englishiname" jdbcType="VARCHAR" />
+    <result column="debitAccount" property="debitaccount" jdbcType="VARCHAR" />
+    <result column="subjectName" property="subjectname" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from outboundtype_lsc
+    where outboundTypeNo = #{outboundtypeno,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.erp.liaoshuanchen.pojo.OutboundtypeLsc" useGeneratedKeys="true" keyProperty="outboundtypeno" >
+    insert into outboundtype_lsc (outboundTypeName, englishiName, debitAccount, 
+      subjectName, remark)
+    values (#{outboundtypename,jdbcType=VARCHAR}, #{englishiname,jdbcType=VARCHAR}, #{debitaccount,jdbcType=VARCHAR}, 
+      #{subjectname,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.erp.liaoshuanchen.pojo.OutboundtypeLsc" >
+    update outboundtype_lsc
+    set outboundTypeName = #{outboundtypename,jdbcType=VARCHAR},
+      englishiName = #{englishiname,jdbcType=VARCHAR},
+      debitAccount = #{debitaccount,jdbcType=VARCHAR},
+      subjectName = #{subjectname,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where outboundTypeNo = #{outboundtypeno,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select outboundTypeNo, outboundTypeName, englishiName, debitAccount, subjectName, 
+    remark
+    from outboundtype_lsc
+    where outboundTypeNo = #{outboundtypeno,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select outboundTypeNo, outboundTypeName, englishiName, debitAccount, subjectName, 
+    remark
+    from outboundtype_lsc
+  </select>
+</mapper>

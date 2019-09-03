@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.erp.liaoshuanchen.dao.ClearingformtypeLscMapper" >
+  <resultMap id="BaseResultMap" type="com.example.erp.liaoshuanchen.pojo.ClearingformtypeLsc" >
+    <id column="cleNo" property="cleno" jdbcType="VARCHAR" />
+    <result column="cleName" property="clename" jdbcType="VARCHAR" />
+    <result column="englishiName" property="englishiname" jdbcType="VARCHAR" />
+    <result column="accounting" property="accounting" jdbcType="VARCHAR" />
+    <result column="courseName" property="coursename" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from clearingformtype_lsc
+    where cleNo = #{cleno}
+  </delete>
+  <insert id="insert" parameterType="com.example.erp.liaoshuanchen.pojo.ClearingformtypeLsc" useGeneratedKeys="true" keyProperty="cleno" >
+    insert into clearingformtype_lsc (cleName, englishiName, accounting, 
+      courseName, remark)
+    values (#{clename}, #{englishiname}, #{accounting}, 
+      #{coursename}, #{remark})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.erp.liaoshuanchen.pojo.ClearingformtypeLsc" >
+    update clearingformtype_lsc
+    set cleName = #{clename},
+      englishiName = #{englishiname},
+      accounting = #{accounting},
+      courseName = #{coursename},
+      remark = #{remark}
+    where cleNo = #{cleno}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select cleNo, cleName, englishiName, accounting, courseName, remark
+    from clearingformtype_lsc
+    where cleNo = #{cleno}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select cleNo, cleName, englishiName, accounting, courseName, remark
+    from clearingformtype_lsc
+  </select>
+</mapper>
