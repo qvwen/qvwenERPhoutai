@@ -20,8 +20,8 @@
 
 	<dependencies>
 
-		 
- 
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -43,6 +43,17 @@
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>2.1.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+ 
+		<dependency>
+
+			<groupId>org.apache.commons</groupId>
+
+			<artifactId>commons-lang3</artifactId>
+
+			<version>3.8.1</version>
+
 		</dependency>
 
 		<!-- 分页启用 -->
