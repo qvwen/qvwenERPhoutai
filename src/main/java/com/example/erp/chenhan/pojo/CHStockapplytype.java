@@ -1,6 +1,6 @@
 package com.example.erp.chenhan.pojo;
 
-public class Dsdscustclass {
+public class CHStockapplytype {
     private String classid;
 
     private String classname;
@@ -8,6 +8,8 @@ public class Dsdscustclass {
     private String engname;
 
     private String memo;
+
+    private Integer enable;
 
     public String getClassid() {
         return classid;
@@ -39,5 +41,13 @@ public class Dsdscustclass {
 
     public void setMemo(String memo) {
         this.memo = memo;
+    }
+
+    public Integer getEnable() {
+        return enable;
+    }
+
+    public void setEnable(Integer enable) {
+        this.enable = enable;
     }
 }

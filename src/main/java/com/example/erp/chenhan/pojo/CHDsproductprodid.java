@@ -2,7 +2,7 @@ package com.example.erp.chenhan.pojo;
 
 import java.util.Date;
 
-public class Dsproductprodid {
+public class CHDsproductprodid {
     private String prodid;
 
     private String classid;

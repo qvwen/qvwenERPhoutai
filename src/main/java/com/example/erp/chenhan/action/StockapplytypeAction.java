@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.erp.chenhan.biz.StockapplytypeBiz;
-import com.example.erp.chenhan.pojo.Stockapplytype;
+import com.example.erp.chenhan.biz.CHStockapplytypeBiz;
+import com.example.erp.chenhan.pojo.CHStockapplytype;
 
 @RestController
 @RequestMapping("/api/StockapplyTypes") // 命名空间
 public class StockapplytypeAction {
 
 	@Resource
-	private StockapplytypeBiz biz;
+	private CHStockapplytypeBiz biz;
 	
 	@GetMapping("{id}/{name}")
-	public List<Stockapplytype> selectAll(@PathVariable Integer id, @PathVariable String name){
+	public List<CHStockapplytype> selectAll(@PathVariable Integer id, @PathVariable String name){
 		return biz.selectAll(id, name);
 	}
 	

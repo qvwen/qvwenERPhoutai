@@ -1,9 +1,11 @@
 package com.example.erp.chenhan.pojo;
 
-public class Stockinquiredetails {
-    private String billid;
+import java.util.Date;
 
-    private Integer rowno;
+public class CHStockapplydetails {
+    private String billno;
+
+    private Integer rowid;
 
     private String prodid;
 
@@ -13,23 +15,21 @@ public class Stockinquiredetails {
 
     private String stdunitname;
 
-    private Integer quantity;
+    private Integer squantity;
 
-    private Double oldprice;
-
-    private Integer discount;
-
-    private Double price;
+    private Double sprice;
 
     private Double amount;
 
-    private Integer taxrate;
+    private Double lastestsprice;
 
-    private Double taxamt;
+    private Double lastestamount;
 
-    private Double vftotal;
+    private Date preindate;
 
-    private Integer isgift;
+    private Date suggestpurdate;
+
+    private Integer qtyremain;
 
     private String trantype;
 
@@ -39,20 +39,20 @@ public class Stockinquiredetails {
 
     private Integer enables;
 
-    public String getBillid() {
-        return billid;
+    public String getBillno() {
+        return billno;
     }
 
-    public void setBillid(String billid) {
-        this.billid = billid;
+    public void setBillno(String billno) {
+        this.billno = billno;
     }
 
-    public Integer getRowno() {
-        return rowno;
+    public Integer getRowid() {
+        return rowid;
     }
 
-    public void setRowno(Integer rowno) {
-        this.rowno = rowno;
+    public void setRowid(Integer rowid) {
+        this.rowid = rowid;
     }
 
     public String getProdid() {
@@ -87,36 +87,20 @@ public class Stockinquiredetails {
         this.stdunitname = stdunitname;
     }
 
-    public Integer getQuantity() {
-        return quantity;
+    public Integer getSquantity() {
+        return squantity;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
+    public void setSquantity(Integer squantity) {
+        this.squantity = squantity;
     }
 
-    public Double getOldprice() {
-        return oldprice;
+    public Double getSprice() {
+        return sprice;
     }
 
-    public void setOldprice(Double oldprice) {
-        this.oldprice = oldprice;
-    }
-
-    public Integer getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(Integer discount) {
-        this.discount = discount;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setSprice(Double sprice) {
+        this.sprice = sprice;
     }
 
     public Double getAmount() {
@@ -127,36 +111,44 @@ public class Stockinquiredetails {
         this.amount = amount;
     }
 
-    public Integer getTaxrate() {
-        return taxrate;
+    public Double getLastestsprice() {
+        return lastestsprice;
     }
 
-    public void setTaxrate(Integer taxrate) {
-        this.taxrate = taxrate;
+    public void setLastestsprice(Double lastestsprice) {
+        this.lastestsprice = lastestsprice;
     }
 
-    public Double getTaxamt() {
-        return taxamt;
+    public Double getLastestamount() {
+        return lastestamount;
     }
 
-    public void setTaxamt(Double taxamt) {
-        this.taxamt = taxamt;
+    public void setLastestamount(Double lastestamount) {
+        this.lastestamount = lastestamount;
     }
 
-    public Double getVftotal() {
-        return vftotal;
+    public Date getPreindate() {
+        return preindate;
     }
 
-    public void setVftotal(Double vftotal) {
-        this.vftotal = vftotal;
+    public void setPreindate(Date preindate) {
+        this.preindate = preindate;
     }
 
-    public Integer getIsgift() {
-        return isgift;
+    public Date getSuggestpurdate() {
+        return suggestpurdate;
     }
 
-    public void setIsgift(Integer isgift) {
-        this.isgift = isgift;
+    public void setSuggestpurdate(Date suggestpurdate) {
+        this.suggestpurdate = suggestpurdate;
+    }
+
+    public Integer getQtyremain() {
+        return qtyremain;
+    }
+
+    public void setQtyremain(Integer qtyremain) {
+        this.qtyremain = qtyremain;
     }
 
     public String getTrantype() {

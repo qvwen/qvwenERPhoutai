@@ -3,7 +3,7 @@ package com.example.erp.chenhan.pojo;
 import java.util.Date;
 import java.util.List;
 
-public class Stockapply {
+public class CHStockapply {
     private String billno;
 
     private Date billdate;
@@ -34,16 +34,16 @@ public class Stockapply {
 
     private String safetyone;
     
-    private List<Stockapplydetails> sds;
+    private List<CHStockapplydetails> sds;
 
      
 	 
 
-	public List<Stockapplydetails> getSds() {
+	public List<CHStockapplydetails> getSds() {
 		return sds;
 	}
 
-	public void setSds(List<Stockapplydetails> sds) {
+	public void setSds(List<CHStockapplydetails> sds) {
 		this.sds = sds;
 	}
 

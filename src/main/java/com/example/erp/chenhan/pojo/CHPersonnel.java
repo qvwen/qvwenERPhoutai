@@ -2,7 +2,7 @@ package com.example.erp.chenhan.pojo;
 
 import java.util.Date;
 
-public class Personnel {
+public class CHPersonnel {
     private Integer personnelId;
 
     private String personnelName;

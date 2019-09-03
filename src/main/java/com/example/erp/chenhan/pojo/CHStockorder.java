@@ -2,7 +2,7 @@ package com.example.erp.chenhan.pojo;
 
 import java.util.Date;
 
-public class Stockorder {
+public class CHStockorder {
     private String billno;
 
     private Date billdate;

@@ -1,15 +1,9 @@
 package com.example.erp.chenhan.pojo;
 
-import java.util.Date;
-/**
- * 
- * @author DELL
- *
- */
-public class Stockorderdetails {
-    private String billno;
+public class CHStockinquiredetails {
+    private String billid;
 
-    private Integer serno;
+    private Integer rowno;
 
     private String prodid;
 
@@ -17,13 +11,15 @@ public class Stockorderdetails {
 
     private String prodsize;
 
-    private Integer squantity;
+    private String stdunitname;
+
+    private Integer quantity;
 
     private Double oldprice;
 
     private Integer discount;
 
-    private Double sprice;
+    private Double price;
 
     private Double amount;
 
@@ -33,30 +29,30 @@ public class Stockorderdetails {
 
     private Double vftotal;
 
-    private Date preindate;
-
-    private String isgift;
+    private Integer isgift;
 
     private String trantype;
 
     private String fromno;
 
+    private String itemremark;
+
     private Integer enables;
 
-    public String getBillno() {
-        return billno;
+    public String getBillid() {
+        return billid;
     }
 
-    public void setBillno(String billno) {
-        this.billno = billno;
+    public void setBillid(String billid) {
+        this.billid = billid;
     }
 
-    public Integer getSerno() {
-        return serno;
+    public Integer getRowno() {
+        return rowno;
     }
 
-    public void setSerno(Integer serno) {
-        this.serno = serno;
+    public void setRowno(Integer rowno) {
+        this.rowno = rowno;
     }
 
     public String getProdid() {
@@ -83,12 +79,20 @@ public class Stockorderdetails {
         this.prodsize = prodsize;
     }
 
-    public Integer getSquantity() {
-        return squantity;
+    public String getStdunitname() {
+        return stdunitname;
     }
 
-    public void setSquantity(Integer squantity) {
-        this.squantity = squantity;
+    public void setStdunitname(String stdunitname) {
+        this.stdunitname = stdunitname;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     public Double getOldprice() {
@@ -107,12 +111,12 @@ public class Stockorderdetails {
         this.discount = discount;
     }
 
-    public Double getSprice() {
-        return sprice;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setSprice(Double sprice) {
-        this.sprice = sprice;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public Double getAmount() {
@@ -147,19 +151,11 @@ public class Stockorderdetails {
         this.vftotal = vftotal;
     }
 
-    public Date getPreindate() {
-        return preindate;
-    }
-
-    public void setPreindate(Date preindate) {
-        this.preindate = preindate;
-    }
-
-    public String getIsgift() {
+    public Integer getIsgift() {
         return isgift;
     }
 
-    public void setIsgift(String isgift) {
+    public void setIsgift(Integer isgift) {
         this.isgift = isgift;
     }
 
@@ -177,6 +173,14 @@ public class Stockorderdetails {
 
     public void setFromno(String fromno) {
         this.fromno = fromno;
+    }
+
+    public String getItemremark() {
+        return itemremark;
+    }
+
+    public void setItemremark(String itemremark) {
+        this.itemremark = itemremark;
     }
 
     public Integer getEnables() {

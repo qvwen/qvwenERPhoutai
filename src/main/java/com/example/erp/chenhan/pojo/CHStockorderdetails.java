@@ -1,11 +1,15 @@
 package com.example.erp.chenhan.pojo;
 
 import java.util.Date;
-
-public class Stockapplydetails {
+/**
+ * 
+ * @author DELL
+ *
+ */
+public class CHStockorderdetails {
     private String billno;
 
-    private Integer rowid;
+    private Integer serno;
 
     private String prodid;
 
@@ -13,29 +17,29 @@ public class Stockapplydetails {
 
     private String prodsize;
 
-    private String stdunitname;
-
     private Integer squantity;
+
+    private Double oldprice;
+
+    private Integer discount;
 
     private Double sprice;
 
     private Double amount;
 
-    private Double lastestsprice;
+    private Integer taxrate;
 
-    private Double lastestamount;
+    private Double taxamt;
+
+    private Double vftotal;
 
     private Date preindate;
 
-    private Date suggestpurdate;
-
-    private Integer qtyremain;
+    private String isgift;
 
     private String trantype;
 
     private String fromno;
-
-    private String itemremark;
 
     private Integer enables;
 
@@ -47,12 +51,12 @@ public class Stockapplydetails {
         this.billno = billno;
     }
 
-    public Integer getRowid() {
-        return rowid;
+    public Integer getSerno() {
+        return serno;
     }
 
-    public void setRowid(Integer rowid) {
-        this.rowid = rowid;
+    public void setSerno(Integer serno) {
+        this.serno = serno;
     }
 
     public String getProdid() {
@@ -79,20 +83,28 @@ public class Stockapplydetails {
         this.prodsize = prodsize;
     }
 
-    public String getStdunitname() {
-        return stdunitname;
-    }
-
-    public void setStdunitname(String stdunitname) {
-        this.stdunitname = stdunitname;
-    }
-
     public Integer getSquantity() {
         return squantity;
     }
 
     public void setSquantity(Integer squantity) {
         this.squantity = squantity;
+    }
+
+    public Double getOldprice() {
+        return oldprice;
+    }
+
+    public void setOldprice(Double oldprice) {
+        this.oldprice = oldprice;
+    }
+
+    public Integer getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Integer discount) {
+        this.discount = discount;
     }
 
     public Double getSprice() {
@@ -111,20 +123,28 @@ public class Stockapplydetails {
         this.amount = amount;
     }
 
-    public Double getLastestsprice() {
-        return lastestsprice;
+    public Integer getTaxrate() {
+        return taxrate;
     }
 
-    public void setLastestsprice(Double lastestsprice) {
-        this.lastestsprice = lastestsprice;
+    public void setTaxrate(Integer taxrate) {
+        this.taxrate = taxrate;
     }
 
-    public Double getLastestamount() {
-        return lastestamount;
+    public Double getTaxamt() {
+        return taxamt;
     }
 
-    public void setLastestamount(Double lastestamount) {
-        this.lastestamount = lastestamount;
+    public void setTaxamt(Double taxamt) {
+        this.taxamt = taxamt;
+    }
+
+    public Double getVftotal() {
+        return vftotal;
+    }
+
+    public void setVftotal(Double vftotal) {
+        this.vftotal = vftotal;
     }
 
     public Date getPreindate() {
@@ -135,20 +155,12 @@ public class Stockapplydetails {
         this.preindate = preindate;
     }
 
-    public Date getSuggestpurdate() {
-        return suggestpurdate;
+    public String getIsgift() {
+        return isgift;
     }
 
-    public void setSuggestpurdate(Date suggestpurdate) {
-        this.suggestpurdate = suggestpurdate;
-    }
-
-    public Integer getQtyremain() {
-        return qtyremain;
-    }
-
-    public void setQtyremain(Integer qtyremain) {
-        this.qtyremain = qtyremain;
+    public void setIsgift(String isgift) {
+        this.isgift = isgift;
     }
 
     public String getTrantype() {
@@ -165,14 +177,6 @@ public class Stockapplydetails {
 
     public void setFromno(String fromno) {
         this.fromno = fromno;
-    }
-
-    public String getItemremark() {
-        return itemremark;
-    }
-
-    public void setItemremark(String itemremark) {
-        this.itemremark = itemremark;
     }
 
     public Integer getEnables() {

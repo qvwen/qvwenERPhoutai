@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.example.erp.chenhan.dao.StockapplyMapper">
-	<resultMap id="BaseResultMap" type="stockapply">
+<mapper namespace="com.example.erp.chenhan.dao.CHStockapplyMapper">
+	<resultMap id="BaseResultMap" type="cHStockapply">
 		<id column="BillNo" property="billno" jdbcType="VARCHAR" />
 		<result column="BillDate" property="billdate" jdbcType="DATE" />
 		<result column="BillStypeId" property="billstypeid" jdbcType="VARCHAR" />
@@ -18,7 +18,7 @@
 			jdbcType="VARCHAR" />
 		<result column="enables" property="enables" jdbcType="INTEGER" />
 		<result column="safetyone" property="safetyone" jdbcType="VARCHAR" />
-		<collection property="sds" ofType="stockapplydetails">
+		<collection property="sds" ofType="chstockapplydetails">
 			<id column="BillNo" property="billno" jdbcType="VARCHAR" />
 			<id column="RowId" property="rowid" jdbcType="INTEGER" />
 			<result column="ProdId" property="prodid" jdbcType="VARCHAR" />

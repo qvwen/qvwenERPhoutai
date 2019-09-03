@@ -2,9 +2,9 @@ package com.example.erp.chenhan.dao;
 
 import java.util.List;
 
-import com.example.erp.chenhan.pojo.Stockapply;
+import com.example.erp.chenhan.pojo.CHStockapply;
 
-public interface StockapplyMapper {
+public interface CHStockapplyMapper {
 //    int deleteByPrimaryKey(String billno);
 //
 //    int insert(Stockapply record);
@@ -15,5 +15,5 @@ public interface StockapplyMapper {
 //
 //    int updateByPrimaryKey(Stockapply record);
     
-    List<Stockapply> queryStockapplyAndDeatails();
+    List<CHStockapply> queryStockapplyAndDeatails();
 }

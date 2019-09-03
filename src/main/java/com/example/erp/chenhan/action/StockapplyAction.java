@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.erp.chenhan.biz.StockapplyBiz;
-import com.example.erp.chenhan.pojo.Stockapply;
+import com.example.erp.chenhan.biz.CHStockapplyBiz;
+import com.example.erp.chenhan.pojo.CHStockapply;
 
 @RestController
 @RequestMapping("/api/Stockapplys") // 命名空间
 public class StockapplyAction {
 	
 	@Resource
-	private StockapplyBiz biz;
+	private CHStockapplyBiz biz;
 	
 	@GetMapping("queryAll")
-	public List<Stockapply> queryStockapplyAndDeatails(){
+	public List<CHStockapply> queryStockapplyAndDeatails(){
 		return biz.queryStockapplyAndDeatails();
 	}
 	

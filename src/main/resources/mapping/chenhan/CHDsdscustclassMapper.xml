@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.example.erp.chenhan.dao.DsdscustclassMapper" >
-  <resultMap id="BaseResultMap" type="dsdscustclass" >
+<mapper namespace="com.example.erp.chenhan.dao.CHDsdscustclassMapper" >
+  <!-- <resultMap id="BaseResultMap" type="dsdscustclass" >
     <id column="classid" property="classid" jdbcType="VARCHAR" />
     <result column="classname" property="classname" jdbcType="VARCHAR" />
     <result column="engname" property="engname" jdbcType="VARCHAR" />
@@ -10,5 +10,5 @@
   <select id="selectAll" resultMap="BaseResultMap" >
     select classid, classname, engname, memo
     from dsdscustclass
-  </select>
+  </select> -->
 </mapper>

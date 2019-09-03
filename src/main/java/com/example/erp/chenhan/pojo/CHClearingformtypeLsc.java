@@ -1,6 +1,6 @@
 package com.example.erp.chenhan.pojo;
 
-public class ClearingformtypeLsc {
+public class CHClearingformtypeLsc {
     private String cleno;
 
     private String clename;

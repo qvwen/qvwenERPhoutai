@@ -1,5 +1,6 @@
 package com.example.erp.chenhan.biz;
 
+
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -9,18 +10,18 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.erp.chenhan.dao.StockapplytypeMapper;
-import com.example.erp.chenhan.pojo.Stockapplytype;
+import com.example.erp.chenhan.dao.CHStockapplyMapper;
+import com.example.erp.chenhan.pojo.CHStockapply;
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, isolation = Isolation.READ_COMMITTED, readOnly = true)
-public class StockapplytypeBiz {
+public class CHStockapplyBiz {
 	
 	@Resource
-	private StockapplytypeMapper dao;
+	private CHStockapplyMapper dao;
 	
-	public List<Stockapplytype> selectAll(Integer id, String name){
-		return dao.selectAll(id, name);
+	public List<CHStockapply> queryStockapplyAndDeatails(){
+		return dao.queryStockapplyAndDeatails();
 	}
-
+	
 }
